@@ -8,7 +8,7 @@
 
 #import "MyViewController.h"
 #import "CollectViewController.h"
-#import "homePageViewController.h"
+#import "FamilyViewController.h"
 
 @interface MyViewController ()
 <
@@ -271,7 +271,7 @@ UINavigationControllerDelegate
     
     MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mycell"];
     
-    NSArray *array = @[@[@"游记&故事集"],@[@"邀请返利"],@[@"牛奶客服"],@[@"帮助中心"]];
+    NSArray *array = @[@[@"更多猎人动态"],@[@"邀请返利"],@[@"牛奶客服"],@[@"帮助中心"]];
     
     cell.onlyLabel.text = array[indexPath.section][indexPath.row];
    //右箭头
@@ -286,6 +286,16 @@ UINavigationControllerDelegate
     return cell;
     
 }
+
+//点击跳转到更多猎人动态画面
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        FamilyViewController *familyVC = [storyboard instantiateViewControllerWithIdentifier:@"FamilyViewController"];
+        [self.navigationController pushViewController:familyVC animated:YES];
+    }
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     

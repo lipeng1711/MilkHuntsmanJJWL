@@ -19,7 +19,7 @@
 }
 - (void)addAllViews
 {
-    self.backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bei.png"]];
+    self.backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hah.jpg"]];
     
     [self.contentView addSubview:self.backImageView];
     _backGroundView = [[UIView alloc] initWithFrame:CGRectZero];

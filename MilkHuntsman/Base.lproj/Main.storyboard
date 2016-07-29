@@ -118,7 +118,7 @@
             </objects>
             <point key="canvasLocation" x="394" y="-914"/>
         </scene>
-        <!--牛奶猎人-->
+        <!--Recommend View Controller-->
         <scene sceneID="vmR-qN-0ac">
             <objects>
                 <viewController id="peA-vA-WZc" customClass="RecommendViewController" sceneMemberID="viewController">
@@ -143,7 +143,7 @@
                             <constraint firstItem="S3i-yd-HCE" firstAttribute="top" secondItem="amW-s8-cAS" secondAttribute="bottom" id="fzk-Wh-99D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="牛奶猎人" id="vdO-Ng-4rM"/>
+                    <navigationItem key="navigationItem" id="vdO-Ng-4rM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="recommendTableView" destination="S3i-yd-HCE" id="Yg5-qj-8NN"/>
@@ -2292,9 +2292,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="EaQ-pT-cZ9"/>
-                                            <exclude reference="E1g-ht-ChM"/>
                                             <exclude reference="8Dh-UV-4qq"/>
+                                            <exclude reference="E1g-ht-ChM"/>
+                                            <exclude reference="EaQ-pT-cZ9"/>
                                         </mask>
                                     </variation>
                                 </view>

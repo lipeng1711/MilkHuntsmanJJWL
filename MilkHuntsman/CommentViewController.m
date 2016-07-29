@@ -25,9 +25,20 @@
 @implementation CommentViewController
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self.commentTableView reloadData];
+    RootViewController *milk = (RootViewController *)self.navigationController.parentViewController;
+    [milk hiddenTabBar];
 }
 
+//显示tabbar
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    RootViewController *milk = (RootViewController *)self.navigationController.parentViewController;
+    
+    [milk showTabBar];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -105,12 +116,6 @@
     return 200;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    FamilyViewController *familyVC = [storyboard instantiateViewControllerWithIdentifier:@"FamilyViewController"];
-    [self.navigationController pushViewController:familyVC animated:YES];
-}
 
 
 

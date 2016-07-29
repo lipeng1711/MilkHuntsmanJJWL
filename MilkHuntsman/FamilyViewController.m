@@ -30,6 +30,23 @@
 
 @implementation FamilyViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    RootViewController *milk = (RootViewController *)self.navigationController.parentViewController;
+    [milk hiddenTabBar];
+    
+    self.navigationController.navigationBar.hidden = NO;
+}
+//显示tabbar
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    RootViewController *milk = (RootViewController *)self.navigationController.parentViewController;
+    
+    [milk showTabBar];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0/255 green:149.0/255 blue:135.0/255 alpha:1];
