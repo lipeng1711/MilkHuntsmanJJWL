@@ -1,0 +1,44 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - DCPathButton (2.1.4)
+  - HyphenateFullSDK (3.1.3)
+  - MJRefresh (3.1.9)
+  - UMengSocialCOM (5.2.1)
+  - WeiboSDK (3.1.3)
+  - Wilddog (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - DCPathButton (~> 2.0)
+  - HyphenateFullSDK
+  - MJRefresh (~> 3.1.9)
+  - UMengSocialCOM (~> 5.2.1)
+  - WeiboSDK
+  - Wilddog
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DCPathButton: 99c8211ef3eafc3b438c917a4c7b4502fa77eee7
+  HyphenateFullSDK: 8b5b092055480308a47c9bb9b78baed7f45f7713
+  MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
+  UMengSocialCOM: 074c135ce349aa4c8848d3fb8458757bcb6ffb67
+  WeiboSDK: acb067053668102cf07d01aa7604350162c2e466
+  Wilddog: f609fa2589c880d6487d02b032ee1b7daa429898
+
+PODFILE CHECKSUM: dada4ce76b2e786447f70a2a7f8bbd3e901ef344
+
+COCOAPODS: 1.0.1

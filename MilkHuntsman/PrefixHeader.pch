@@ -1,0 +1,82 @@
+//
+//  PrefixHeader.pch
+//  MilkHuntsman
+//
+//  Created by fengchunyan on 16/7/13.
+//  Copyright © 2016年 South Park. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//屏幕的宽度
+#define WindownWidth [[UIScreen mainScreen] bounds].size.width
+//屏幕的高度
+#define WindowHeight [[UIScreen mainScreen] bounds].size.height
+
+#import <AFNetworking.h>
+#import <UIImageView+AFNetworking.h>
+#import "NetWorkRequest.h"
+#import "RequestUrls.h"
+#import "ZJSingleton.h"
+#import "JJZ.h"
+#import "BaseViewController.h"
+#import "MilkHuntsmanTabBar.h"
+#import <MJRefresh.h>
+#import <CoreData/CoreData.h>
+#import "LSNightModel.h"
+#import "GiFHUD.h"
+#import "enter.h"
+#import <SMS_SDK/SMSSDK.h>
+#import "delegateViewController.h"
+#import "RootViewController.h"
+#import "loginViewController.h"
+#import "UsePhoneNumViewController.h"
+#import "SetViewController.h"
+#import "integralCollectionViewCell.h"
+#import "JJZshare.h"
+#import "AccountTableViewCell.h"
+#import "SetTableViewCell.h"
+#import "AccountViewController.h"
+#import "SDImageCache.h"
+#import "LoginAndEnterViewController.h"
+#import "MyTableViewCell.h"
+#import "SetViewController.h"
+#import "AccountViewController.h"
+#import "intagralViewController.h"
+#import "AsAHuntViewController.h"
+#import "MyViewController.h"
+#import "FriendListViewController.h"
+#import "EMSDK.h"
+#import "ChatViewController.h"
+#import "FromTableViewCell.h"
+#import "ChatTableViewCell.h"
+#import "firstViewController.h"
+#import "secondViewController.h"
+#import "ThirdViewController.h"
+#import "ForthViewController.h"
+//微博第三方登录
+#define kWilddogURL @"https://<milk>.wilddogio.com"
+
+
+
+
+
+
+//聊天界面所用到的框架
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#import "AppDelegate.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
