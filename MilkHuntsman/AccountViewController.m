@@ -7,7 +7,7 @@
 //
 
 #import "AccountViewController.h"
-
+#import "ChangeNameViewController.h"
 @interface AccountViewController ()
 <
 UITableViewDataSource,
@@ -49,19 +49,6 @@ UIImagePickerControllerDelegate
 
 //实现头像点击事件
 - (void)action:(UITapGestureRecognizer *)sender{
-    /*
-     UIImagePickerController是系统提供的用来获取图片和视频的接口
-     用UIImagePickerController 类来获取图片视频，大体分为以下几个步骤：
-     1. 初始化UIImagePickerController 类；
-     2. 设置UIImagePickerController 实例的数据来源类型（下面解释）；
-     3. 设置代理；
-     4. 如果需要做图片修改的话设置 allowsEditing =yes。
-     enum {
-     UIImagePickerControllerSourceTypePhotoLibrary ,//来自图库
-     UIImagePickerControllerSourceTypeCamera ,//来自相机
-     UIImagePickerControllerSourceTypeSavedPhotosAlbum //来自相册
-     };
-     */
     UIImagePickerController *picker = [UIImagePickerController new];
     picker.delegate = self ;
     //  提示框
@@ -102,10 +89,6 @@ UIImagePickerControllerDelegate
 //    NSLog(@"%@",headImage);
     NSData * imageData = UIImageJPEGRepresentation(temp, 1);
     [[NSUserDefaults standardUserDefaults] setValue:imageData forKey:[NSString stringWithFormat:@"imageName:%@",headImage]];
-//    NSData与UIImage相互转换
-//    NSData *imageData = [NSData dataWithContentsOfFile: imagePath];
-//    UIImage *image = [UIImage imageWithData: imageData];
-    
     [JJZshare shareheadImage].changeImage = temp;
     //关闭模态
     [self dismissViewControllerAnimated:YES completion:^{
@@ -115,12 +98,16 @@ UIImagePickerControllerDelegate
 
 - (void)viewWillAppear:(BOOL)animated{
     self.headImageView.image = [JJZshare shareheadImage].changeImage;
-    if ([JJZshare shareheadImage].headImage) {
-        NSString *headImage = [JJZshare shareheadImage].headImage;
-       NSData *imageData = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"imageName:%@",headImage]];
-        self.headImageView.image = [UIImage imageWithData:imageData];
+    AppDelegate * app = [UIApplication sharedApplication].delegate;
+    if (app.hasLogined) {
+        if ([JJZshare shareheadImage].headImage) {
+            NSString *headImage = [JJZshare shareheadImage].headImage;
+            NSData *imageData = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"imageName:%@",headImage]];
+            self.headImageView.image = [UIImage imageWithData:imageData];
+        }
+    }else{
+        self.headImageView.image = nil;
     }
-    
 }
 
 //传值
@@ -129,8 +116,6 @@ UIImagePickerControllerDelegate
     self.headImageView.layer.masksToBounds = YES;
     
     self.headImageView.layer.cornerRadius = self.headImageView.bounds.size.width / 2.0;
-    
-//    self.headImageView.image = [JJZshare shareheadImage].image;
     
 }
 
@@ -146,27 +131,20 @@ UIImagePickerControllerDelegate
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     AccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"accountCell"];
-    
     cell.textLabel.alpha = 0.4;
-    
     NSArray *array = @[@[@"用户名"],@[@"手机号码"],@[@"电子邮箱"],@[@"地区"],@[@"性别"],@[@"生日"],@[@"个人介绍"]];
-    
     cell.textLabel.text = array[indexPath.section][indexPath.row];
-    
     if (indexPath.section == 0) {
-        
-        cell.detailTextLabel.text = [JJZshare shareheadImage].name;
-        
+        if ([JJZshare shareheadImage].headImage == nil) {
+            cell.detailTextLabel.text = @"未命名";
+        }else{
+            cell.detailTextLabel.text = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"myUserName%@",[JJZshare shareheadImage].headImage]];
+        }
     }else{
-        
         cell.detailTextLabel.text = @"未填写";
-        
     }
-    
     return cell;
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -181,7 +159,17 @@ UIImagePickerControllerDelegate
     return 5;
     
 }
-
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    //设置下个界面navigationbar字,必须初始化
+    UIBarButtonItem *set = [UIBarButtonItem new];
+    set.title = @"修改用户名";
+    self.navigationItem.backBarButtonItem = set;
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle  ]];
+    ChangeNameViewController *change = [story instantiateViewControllerWithIdentifier:@"ChangeNameViewController"];
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        [self.navigationController pushViewController:change animated:YES];
+    }
+}
 /*
 #pragma mark - Navigation
 

@@ -16,11 +16,7 @@
 UITableViewDataSource,
 UITableViewDelegate,
 UIScrollViewDelegate,
-UINavigationControllerDelegate,
-loginIsError
-
-
-
+UINavigationControllerDelegate
 >
 
 @property (weak, nonatomic) IBOutlet UITableView *setTableVIew;
@@ -67,37 +63,36 @@ loginIsError
 - (void)OUT:(UIBarButtonItem *)sender{
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     LoginAndEnterViewController *outVC = [story instantiateViewControllerWithIdentifier:@"LoginAndEnterViewController"];
-
+    
     if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"登录"]) {
         [self presentViewController:outVC animated:YES completion:^{
             
         }];
-
+        
     }else if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"退出登录"]) {
-            //  提示框
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确定推出登录?" message: nil preferredStyle:(UIAlertControllerStyleAlert)];
-            UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-                //退出登录
-                EMError *error = [[EMClient sharedClient] logout:YES];
-                if (!error) {
-                    NSLog(@"退出成功");
-                    AppDelegate * app = [UIApplication sharedApplication].delegate;
-                    app.hasLogined = NO;
-
-                    self.navigationItem.rightBarButtonItem.title = @"登录";
-                }
-            }];
-            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
-                [self dismissViewControllerAnimated:YES completion:^{
-                    
-                }];
-            }];
-            //    添加到控制器
-            [alert addAction:action];
-            [alert addAction:cancel];
-            [self presentViewController:alert animated:YES completion:^{
+        //  提示框
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确定推出登录?" message: nil preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            //退出登录
+            EMError *error = [[EMClient sharedClient] logout:YES];
+            if (!error) {
+                NSLog(@"退出成功");
+                AppDelegate * app = [UIApplication sharedApplication].delegate;
+                app.hasLogined = NO;
+                self.navigationItem.rightBarButtonItem.title = @"登录";
+            }
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:YES completion:^{
                 
             }];
+        }];
+        //    添加到控制器
+        [alert addAction:action];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:^{
+            
+        }];
     }
 }
 
@@ -173,12 +168,25 @@ loginIsError
     UIBarButtonItem *set = [UIBarButtonItem new];
     set.title = @"账户设置";
     self.navigationItem.backBarButtonItem = set;
-
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     AccountViewController *accountVC = [storyboard instantiateViewControllerWithIdentifier:@"AccountViewController"];
-    
     if (indexPath.section == 0 && indexPath.row == 0) {
-         [self.navigationController pushViewController:accountVC animated:YES];
+        if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"登录"]) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请先登录" message: nil preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+            }];
+            UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            }];
+            //    添加到控制器
+            [alert addAction:action];
+            [alert addAction:confirm];
+            [self presentViewController:alert animated:YES completion:^{
+                
+            }];
+        }else{
+            [self.navigationController pushViewController:accountVC animated:YES];
+        }
     }else if (indexPath.section == 1 && indexPath.row == 2) {
         //缓存路径
         NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask, YES);
@@ -188,7 +196,7 @@ loginIsError
         }];
         UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             [self removeCache:cacheDir];
-        [self.setTableVIew reloadData];
+            [self.setTableVIew reloadData];
         }];
         //    添加到控制器
         [alert addAction:action];
@@ -210,7 +218,7 @@ loginIsError
             [self presentViewController:alert animated:YES completion:^{
                 
             }];
-
+            
         }else{
             UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
             FriendListViewController *friendVC = [story instantiateViewControllerWithIdentifier:@"FriendListViewController"];

@@ -34,7 +34,7 @@
 - (IBAction)enter:(UIButton *)sender {
     //验证,判断 用户名和密码(正则表达式)
     if ([self.userNameTextField.text length] == 0) {
-                NSLog(@"用户名为空");
+        NSLog(@"用户名为空");
     }
     else if ([self.passWordTextField.text length] == 0){
         NSLog(@"密码为空");
@@ -42,24 +42,14 @@
         EMError *error = [[EMClient sharedClient] loginWithUsername:self.userNameTextField.text password:self.passWordTextField.text];
         if (!error) {
             NSLog(@"登录成功");
-          
             [[NSNotificationCenter defaultCenter]postNotificationName:@"error" object:nil];
-            
-            AppDelegate*app = [UIApplication sharedApplication].delegate;
-            app.hasLogined=YES;
-
+            AppDelegate * app = [UIApplication sharedApplication].delegate;
+            app.hasLogined = YES;
             //获取用户信息~~~~~~~~~~~~~
             NSString *userName = self.userNameTextField.text;
             [JJZshare shareheadImage].headImage = self.userNameTextField.text;
-            [[NSUserDefaults standardUserDefaults] setValue:self.userNameTextField.text forKey:@"isLogin"];
-
-//                        NSString *passWord = self.passWordTF.text;
-            //存储用户信息
             NSUserDefaults *defaults = [NSUserDefaults new];
             [defaults setObject:userName forKey:self.userNameTextField.text];
-
-            //            [defaults setObject:passWord forKey:@"password"];
-            //        [self performSegueWithIdentifier:@"friends" sender:nil];
             [self alertWithTitle:@"消息" message:@"确定" alertAction:(UIAlertActionStyleDefault) emrror:error];
             //自动登录
             //        [[EMClient sharedClient].options setIsAutoLogin:YES];
