@@ -88,7 +88,7 @@
 //发私信按钮的方法
 - (IBAction)sendMessageBtn:(UIButton *)sender {
     
-    //点击跳转到聊天页面
+    //点击跳转到聊天页面,现在可以了
 }
 
 
