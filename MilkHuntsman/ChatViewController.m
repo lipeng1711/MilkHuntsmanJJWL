@@ -86,6 +86,7 @@ UINavigationControllerDelegate
 //输入内容界面
 - (void)addSendView{
     UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(50, self.view.bounds.size.height - 45, self.view.bounds.size.width - 160, 40)];
+    textView.backgroundColor = [UIColor colorWithRed:53 / 255.0 green:191 / 255.0 blue:212 / 255.0 alpha:1];
     [self.view addSubview:textView];
     self.msgTextView = textView;
     UIButton *sendBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
@@ -95,7 +96,6 @@ UINavigationControllerDelegate
     [sendBtn addTarget:self action:@selector(sendMessage:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:sendBtn];
     sendBtn.backgroundColor = [UIColor clearColor];
-    textView.backgroundColor = [UIColor whiteColor];
     UIButton *photoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     photoBtn.frame = CGRectMake(self.view.bounds.size.width - 100, self.view.bounds.size.height - 50, 47, 47);
     [photoBtn setBackgroundImage:[UIImage imageNamed:@"tianjia.png"] forState:(UIControlStateNormal)];
