@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="f4C-Pr-iLa">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f4C-Pr-iLa">
                         <rect key="frame" x="262" y="8" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="Swf-es-iRu"/>
@@ -48,6 +48,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="headImage" destination="f4C-Pr-iLa" id="Zb7-K3-rsr"/>
                 <outlet property="myLabel" destination="DFu-E2-3gB" id="L1C-9J-IpX"/>
             </connections>
             <point key="canvasLocation" x="339" y="296.5"/>
@@ -55,6 +56,5 @@
     </objects>
     <resources>
         <image name="1.png" width="216" height="31"/>
-        <image name="2.jpg" width="2176" height="1224"/>
     </resources>
 </document>
