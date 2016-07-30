@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "chooser-moment-icon-music-highlighted.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "chooser-moment-icon-music-highlighted@2x.png",
+      "filename" : "flower.png",
       "scale" : "2x"
     },
     {

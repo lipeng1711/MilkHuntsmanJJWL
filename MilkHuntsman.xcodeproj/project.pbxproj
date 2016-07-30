@@ -191,6 +191,11 @@
 		C2B15DBB1D4B85A100F501A5 /* MilkTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B15DB81D4B85A100F501A5 /* MilkTitle@2x.png */; };
 		C2B15DBC1D4B85A100F501A5 /* MilkTitle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B15DB91D4B85A100F501A5 /* MilkTitle@3x.png */; };
 		C2B15DBE1D4B892900F501A5 /* hah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2B15DBD1D4B892900F501A5 /* hah.jpg */; };
+		C2E85E361D4CA90200EF8C5F /* UIImage+ZJImageExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E85E351D4CA90200EF8C5F /* UIImage+ZJImageExtension.m */; };
+		C2E85E391D4CA9F200EF8C5F /* AVCaptureSession+ZJCodeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E85E381D4CA9F200EF8C5F /* AVCaptureSession+ZJCodeExtension.m */; };
+		C2E85E3C1D4CABA100EF8C5F /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E85E3B1D4CABA100EF8C5F /* CreateViewController.m */; };
+		C2E85E421D4CC24200EF8C5F /* 89393-100.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2E85E411D4CC24200EF8C5F /* 89393-100.jpg */; };
+		C2E85E451D4CC9BC00EF8C5F /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E85E441D4CC9BC00EF8C5F /* ScanViewController.m */; };
 		D00FD4E745B23C41D646C177 /* libPods-MilkHuntsman.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7A04999F13DCE0DD638E86 /* libPods-MilkHuntsman.a */; };
 		D64AF7AC1D3CC70A004626FD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D64AF7AB1D3CC70A004626FD /* libz.tbd */; };
 		D64AF7AE1D3CC718004626FD /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D64AF7AD1D3CC718004626FD /* libicucore.tbd */; };
@@ -581,6 +586,15 @@
 		C2B15DB81D4B85A100F501A5 /* MilkTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MilkTitle@2x.png"; sourceTree = "<group>"; };
 		C2B15DB91D4B85A100F501A5 /* MilkTitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MilkTitle@3x.png"; sourceTree = "<group>"; };
 		C2B15DBD1D4B892900F501A5 /* hah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hah.jpg; sourceTree = "<group>"; };
+		C2E85E341D4CA90200EF8C5F /* UIImage+ZJImageExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZJImageExtension.h"; sourceTree = "<group>"; };
+		C2E85E351D4CA90200EF8C5F /* UIImage+ZJImageExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZJImageExtension.m"; sourceTree = "<group>"; };
+		C2E85E371D4CA9F200EF8C5F /* AVCaptureSession+ZJCodeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVCaptureSession+ZJCodeExtension.h"; sourceTree = "<group>"; };
+		C2E85E381D4CA9F200EF8C5F /* AVCaptureSession+ZJCodeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVCaptureSession+ZJCodeExtension.m"; sourceTree = "<group>"; };
+		C2E85E3A1D4CABA100EF8C5F /* CreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateViewController.h; sourceTree = "<group>"; };
+		C2E85E3B1D4CABA100EF8C5F /* CreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateViewController.m; sourceTree = "<group>"; };
+		C2E85E411D4CC24200EF8C5F /* 89393-100.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "89393-100.jpg"; sourceTree = "<group>"; };
+		C2E85E431D4CC9BC00EF8C5F /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		C2E85E441D4CC9BC00EF8C5F /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		D64AF7AB1D3CC70A004626FD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D64AF7AD1D3CC718004626FD /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		D64AF7AF1D3CC722004626FD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1265,6 +1279,7 @@
 		C2A5FB431D3661BE00F269B0 /* 加号页面 */ = {
 			isa = PBXGroup;
 			children = (
+				C2E85E2D1D4CA86500EF8C5F /* Code */,
 				C2B15D161D4AF67600F501A5 /* Camera */,
 				C2B15D171D4AF68F00F501A5 /* NightModel */,
 			);
@@ -1420,6 +1435,7 @@
 		C2B15D991D4B034300F501A5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C2E85E411D4CC24200EF8C5F /* 89393-100.jpg */,
 				C2B15DB71D4B85A100F501A5 /* MilkTitle.png */,
 				C2B15DB81D4B85A100F501A5 /* MilkTitle@2x.png */,
 				C2B15DB91D4B85A100F501A5 /* MilkTitle@3x.png */,
@@ -1458,6 +1474,21 @@
 				C2B15D771D4B033400F501A5 /* Star.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		C2E85E2D1D4CA86500EF8C5F /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				C2E85E341D4CA90200EF8C5F /* UIImage+ZJImageExtension.h */,
+				C2E85E351D4CA90200EF8C5F /* UIImage+ZJImageExtension.m */,
+				C2E85E371D4CA9F200EF8C5F /* AVCaptureSession+ZJCodeExtension.h */,
+				C2E85E381D4CA9F200EF8C5F /* AVCaptureSession+ZJCodeExtension.m */,
+				C2E85E3A1D4CABA100EF8C5F /* CreateViewController.h */,
+				C2E85E3B1D4CABA100EF8C5F /* CreateViewController.m */,
+				C2E85E431D4CC9BC00EF8C5F /* ScanViewController.h */,
+				C2E85E441D4CC9BC00EF8C5F /* ScanViewController.m */,
+			);
+			name = Code;
 			sourceTree = "<group>";
 		};
 		D6582B2D1D4751DD005D3465 /* 第五界面 */ = {
@@ -2184,6 +2215,7 @@
 				DD78CEAB1D4B36C6000179E3 /* shua2.gif in Resources */,
 				C256DCF41D3F0BAE000B4FB4 /* input-field@2x.png in Resources */,
 				C256DC6D1D3F0B3A000B4FB4 /* bread.png in Resources */,
+				C2E85E421D4CC24200EF8C5F /* 89393-100.jpg in Resources */,
 				C2A5FB291D365DE800F269B0 /* 2image@2x.png in Resources */,
 				C2B15D941D4B033400F501A5 /* seen.png in Resources */,
 				D6582BBD1D475296005D3465 /* 1.jpg in Resources */,
@@ -2304,6 +2336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD78CF0B1D4B38D3000179E3 /* HYBModalHalfController.m in Sources */,
+				C2E85E451D4CC9BC00EF8C5F /* ScanViewController.m in Sources */,
 				C256DD061D3F0BC1000B4FB4 /* MessageTableViewCell.m in Sources */,
 				D6582C021D4755F9005D3465 /* SDImageCache.m in Sources */,
 				DD78CEBE1D4B3769000179E3 /* RecommendView.m in Sources */,
@@ -2333,6 +2366,7 @@
 				D6E6A6621D4A09C0008453B2 /* ForthViewController.m in Sources */,
 				C256DD2C1D3F1253000B4FB4 /* FindTableViewCell.m in Sources */,
 				C256DD561D3F2710000B4FB4 /* LPSegment.m in Sources */,
+				C2E85E361D4CA90200EF8C5F /* UIImage+ZJImageExtension.m in Sources */,
 				C2A5FAFD1D365A7B00F269B0 /* BaseModel.m in Sources */,
 				C256DCCA1D3F0BAE000B4FB4 /* JSMessageInputView.m in Sources */,
 				DD78CEC81D4B379A000179E3 /* RecommendSearchTableViewCell.m in Sources */,
@@ -2401,12 +2435,14 @@
 				C2B15DA71D4B1A8200F501A5 /* coreManager.m in Sources */,
 				DD78CF1C1D4B3909000179E3 /* Annotation.m in Sources */,
 				D6582C051D4755F9005D3465 /* SDWebImageDownloader.m in Sources */,
+				C2E85E391D4CA9F200EF8C5F /* AVCaptureSession+ZJCodeExtension.m in Sources */,
 				C256DD581D3F2710000B4FB4 /* LPSegmentIndicator.m in Sources */,
 				C2A5FB0E1D365BA800F269B0 /* MilkHuntsmanTabBar.m in Sources */,
 				D6582C061D4755F9005D3465 /* SDWebImageDownloaderOperation.m in Sources */,
 				C256DD3C1D3F13AF000B4FB4 /* StarView.m in Sources */,
 				DD78CEEA1D4B37F3000179E3 /* FouthTableViewCell.m in Sources */,
 				D6582C071D4755F9005D3465 /* SDWebImageManager.m in Sources */,
+				C2E85E3C1D4CABA100EF8C5F /* CreateViewController.m in Sources */,
 				C2B15D9E1D4B19C500F501A5 /* MilkHuntsman.xcdatamodeld in Sources */,
 				C2A5FAE81D36594200F269B0 /* AppDelegate.m in Sources */,
 				C2B15D2F1D4AFB0600F501A5 /* CollectViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import "DCPathButton.h"
 #import "CameraViewController.h"
 #import "MapViewController.h"
+#import "CreateViewController.h"
 
 @interface RootViewController ()<MilkHuntsmanTabBarDelegate,DCPathButtonDelegate>
 
@@ -56,8 +57,8 @@
     
     // Configure item buttons
     //
-    DCPathItemButton *itemButton_1 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-music"]
-                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-music-highlighted"]
+    DCPathItemButton *itemButton_1 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-thought"]
+                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-thought-highlighted"]
                                                             backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
                                                  backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
     
@@ -66,8 +67,8 @@
                                                             backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
                                                  backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
     
-        DCPathItemButton *itemButton_3 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-thought"]
-                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-thought-highlighted"]
+        DCPathItemButton *itemButton_3 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-camera"]
+                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-camera-highlighted"]
                                                             backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
                                                  backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
     
@@ -131,11 +132,7 @@
             [button addTarget:weakSelf action:@selector(backAction:) forControlEvents:(UIControlEventTouchUpInside)];
             
         }];
-        
-        
     }
-
-    
 #pragma mark ========== 点击夜间模式button的方法 =====================
     //夜间模式
     if (itemButtonIndex == 3) {
@@ -153,6 +150,12 @@
     if (itemButtonIndex == 2) {
         CameraViewController *cameraVC = [CameraViewController new];
         [self presentViewController:cameraVC animated:YES completion:nil];
+    }
+    
+#pragma mark ============== 生成二维码 ================
+    if (itemButtonIndex == 0) {
+        CreateViewController *createVC = [CreateViewController new];
+        [self presentViewController:createVC animated:YES completion:nil];
     }
 
 }
