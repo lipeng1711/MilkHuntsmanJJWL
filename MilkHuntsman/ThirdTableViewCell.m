@@ -22,7 +22,7 @@
 
 - (void)addAllViews
 {
-
+    
     self.scrollView = [UIScrollView new];
     [self.contentView addSubview:self.scrollView];
     
@@ -34,10 +34,11 @@
     
     //--------------------添加scrollView---------------
     NSInteger kWidth = WindownWidth * 0.8;
-    NSInteger kHeight = WindowHeight * 0.3;
-    self.scrollView.frame = CGRectMake(0, 0, WindownWidth, kHeight);
-    self.scrollView.contentSize = CGSizeMake(kWidth * 6 + 5, 0);
+    NSInteger kHeight = WindowHeight * 0.4;
+    self.scrollView.frame = CGRectMake(5, 0, WindownWidth, kHeight);
+    self.scrollView.contentSize = CGSizeMake(kWidth * 6 + 6, 0);
     
+    self.scrollView.showsHorizontalScrollIndicator = NO;
     
     
     for (int i = 0; i < 6; i ++) {
@@ -81,19 +82,23 @@
         [self.tempView addSubview:self.activityLabel];
         self.nameLabel.textAlignment = NSTextAlignmentCenter;
         self.descriptionLabel.textAlignment = NSTextAlignmentCenter;
-        self.descriptionLabel.font = [UIFont systemFontOfSize:15.0];
+        self.activityLabel.textAlignment = NSTextAlignmentCenter;
+        self.descriptionLabel.font = [UIFont systemFontOfSize:17.0];
         self.descriptionLabel.numberOfLines = 0;
-        
-//-----------------------赋值--------------------------
+        self.addressLabel.textColor = [UIColor lightGrayColor];
+        self.addressLabel.font = [UIFont systemFontOfSize:15.0];
+        self.activityLabel.font = [UIFont systemFontOfSize:15.0];
+        self.activityLabel.textColor = [UIColor lightGrayColor];
+        //-----------------------赋值--------------------------
         [self.litileImageView setImageWithURL:[NSURL URLWithString:_thirdArr[i][@"user"][@"avatar_l"]]];
         [self.bigImageView setImageWithURL:[NSURL URLWithString:_thirdArr[i][@"cover_image"]]];
         self.nameLabel.text = [NSString stringWithFormat:@"%@",_thirdArr[i][@"user"][@"name"]];
         self.addressLabel.text = [NSString stringWithFormat:@"%@",_thirdArr[i][@"poi"][@"name"]];
         self.descriptionLabel.text = [NSString stringWithFormat:@"%@",_thirdArr[i][@"text"]];
         self.activityLabel.text = [NSString stringWithFormat:@"%@",_thirdArr[i][@"target"][@"title"]];
-
         
-//-----------------------每个tempView添加一个手势-----------------------
+        
+        //-----------------------每个tempView添加一个手势-----------------------
         self.tempView.userInteractionEnabled = YES;
         _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
         [self.tempView  addGestureRecognizer:_tapGesture];
@@ -104,10 +109,10 @@
 }
 - (void)tapAction:(UITapGestureRecognizer *)sender
 {
-//    NSLog(@"View = %@",sender.self.view);
+    //    NSLog(@"View = %@",sender.self.view);
     NSInteger indext = (sender.self.view.frame.origin.x - 5) / (sender.self.view.frame.size.width + 5);
     [self.thirdDelegate thirdChangePageBySelected:indext];
-
+    
 }
 
 - (void)awakeFromNib {
@@ -116,7 +121,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

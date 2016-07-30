@@ -277,6 +277,13 @@
 		D6582C181D4756A5005D3465 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6582C171D4756A5005D3465 /* SystemConfiguration.framework */; };
 		D6582C1A1D4756BE005D3465 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6582C191D4756BE005D3465 /* libiconv.tbd */; };
 		D6582C1C1D4756CC005D3465 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6582C1B1D4756CC005D3465 /* Security.framework */; };
+		D6E5C72A1D4C373A0090D2F5 /* tianjia.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E5C7281D4C373A0090D2F5 /* tianjia.png */; };
+		D6E5C72B1D4C373A0090D2F5 /* yuyin2.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E5C7291D4C373A0090D2F5 /* yuyin2.png */; };
+		D6E5C72F1D4C38190090D2F5 /* ImageFromTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E5C72D1D4C38190090D2F5 /* ImageFromTableViewCell.m */; };
+		D6E5C7301D4C38190090D2F5 /* ImageFromTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E5C72E1D4C38190090D2F5 /* ImageFromTableViewCell.xib */; };
+		D6E5C73A1D4C38810090D2F5 /* ImageToTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E5C7381D4C38810090D2F5 /* ImageToTableViewCell.m */; };
+		D6E5C73B1D4C38810090D2F5 /* ImageToTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E5C7391D4C38810090D2F5 /* ImageToTableViewCell.xib */; };
+		D6E5C73F1D4C39EF0090D2F5 /* ChangeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E5C73E1D4C39EF0090D2F5 /* ChangeNameViewController.m */; };
 		D6E6A6551D4A070C008453B2 /* 1-7.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E6A6531D4A070C008453B2 /* 1-7.png */; };
 		D6E6A6561D4A070C008453B2 /* Banned_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E6A6541D4A070C008453B2 /* Banned_sign.png */; };
 		D6E6A65F1D4A09B6008453B2 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E6A65E1D4A09B6008453B2 /* ThirdViewController.m */; };
@@ -706,6 +713,16 @@
 		D6582C171D4756A5005D3465 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D6582C191D4756BE005D3465 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		D6582C1B1D4756CC005D3465 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D6E5C7281D4C373A0090D2F5 /* tianjia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tianjia.png; sourceTree = "<group>"; };
+		D6E5C7291D4C373A0090D2F5 /* yuyin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuyin2.png; sourceTree = "<group>"; };
+		D6E5C72C1D4C38190090D2F5 /* ImageFromTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFromTableViewCell.h; sourceTree = "<group>"; };
+		D6E5C72D1D4C38190090D2F5 /* ImageFromTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFromTableViewCell.m; sourceTree = "<group>"; };
+		D6E5C72E1D4C38190090D2F5 /* ImageFromTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageFromTableViewCell.xib; sourceTree = "<group>"; };
+		D6E5C7371D4C38810090D2F5 /* ImageToTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageToTableViewCell.h; sourceTree = "<group>"; };
+		D6E5C7381D4C38810090D2F5 /* ImageToTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageToTableViewCell.m; sourceTree = "<group>"; };
+		D6E5C7391D4C38810090D2F5 /* ImageToTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageToTableViewCell.xib; sourceTree = "<group>"; };
+		D6E5C73D1D4C39EF0090D2F5 /* ChangeNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeNameViewController.h; sourceTree = "<group>"; };
+		D6E5C73E1D4C39EF0090D2F5 /* ChangeNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNameViewController.m; sourceTree = "<group>"; };
 		D6E6A6531D4A070C008453B2 /* 1-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-7.png"; sourceTree = "<group>"; };
 		D6E6A6541D4A070C008453B2 /* Banned_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banned_sign.png; sourceTree = "<group>"; };
 		D6E6A65D1D4A09B6008453B2 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
@@ -1509,6 +1526,9 @@
 				D6582BA61D475296005D3465 /* 3.jpg */,
 				D6582BA71D475296005D3465 /* 2.jpg */,
 				D6582BA81D475296005D3465 /* 1.jpg */,
+				D6582B4E1D475264005D3465 /* 1.png */,
+				D6E5C7281D4C373A0090D2F5 /* tianjia.png */,
+				D6E5C7291D4C373A0090D2F5 /* yuyin2.png */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -1574,6 +1594,7 @@
 			isa = PBXGroup;
 			children = (
 				D6582B411D475264005D3465 /* LoginAndEnterViewController.h */,
+				D6582B421D475264005D3465 /* LoginAndEnterViewController.m */,
 			);
 			name = loginAndEnter;
 			sourceTree = "<group>";
@@ -1633,7 +1654,6 @@
 			children = (
 				D6582B4A1D475264005D3465 /* FriendListViewController.h */,
 				D6582B4B1D475264005D3465 /* FriendListViewController.m */,
-				D6582B421D475264005D3465 /* LoginAndEnterViewController.m */,
 				D6582BCC1D4753B0005D3465 /* Chat */,
 			);
 			name = FriendList;
@@ -1644,13 +1664,18 @@
 			children = (
 				D6582B4C1D475264005D3465 /* ChatViewController.h */,
 				D6582B4D1D475264005D3465 /* ChatViewController.m */,
-				D6582B4E1D475264005D3465 /* 1.png */,
 				D6582B4F1D475264005D3465 /* ChatTableViewCell.h */,
 				D6582B501D475264005D3465 /* ChatTableViewCell.m */,
 				D6582B511D475264005D3465 /* ChatTableViewCell.xib */,
 				D6582B521D475264005D3465 /* FromTableViewCell.h */,
 				D6582B531D475264005D3465 /* FromTableViewCell.m */,
 				D6582B541D475264005D3465 /* FromTableViewCell.xib */,
+				D6E5C72C1D4C38190090D2F5 /* ImageFromTableViewCell.h */,
+				D6E5C72D1D4C38190090D2F5 /* ImageFromTableViewCell.m */,
+				D6E5C72E1D4C38190090D2F5 /* ImageFromTableViewCell.xib */,
+				D6E5C7371D4C38810090D2F5 /* ImageToTableViewCell.h */,
+				D6E5C7381D4C38810090D2F5 /* ImageToTableViewCell.m */,
+				D6E5C7391D4C38810090D2F5 /* ImageToTableViewCell.xib */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -1670,6 +1695,7 @@
 			children = (
 				D6582B551D475264005D3465 /* AccountViewController.h */,
 				D6582B561D475264005D3465 /* AccountViewController.m */,
+				D6E5C73C1D4C39D40090D2F5 /* changeName */,
 			);
 			name = AccountController;
 			sourceTree = "<group>";
@@ -1831,6 +1857,15 @@
 				D6582BFF1D4755F9005D3465 /* UIView+WebCacheOperation.m */,
 			);
 			name = SDWebImage;
+			sourceTree = "<group>";
+		};
+		D6E5C73C1D4C39D40090D2F5 /* changeName */ = {
+			isa = PBXGroup;
+			children = (
+				D6E5C73D1D4C39EF0090D2F5 /* ChangeNameViewController.h */,
+				D6E5C73E1D4C39EF0090D2F5 /* ChangeNameViewController.m */,
+			);
+			name = changeName;
 			sourceTree = "<group>";
 		};
 		DD78CEA61D4B36A8000179E3 /* GifHUD */ = {
@@ -2062,6 +2097,7 @@
 				C256DCD71D3F0BAE000B4FB4 /* bubble-default-outgoing-selected.png in Resources */,
 				C2B15D881D4B033400F501A5 /* left_round.png in Resources */,
 				C2A5FB341D365DE800F269B0 /* paper@2x.png in Resources */,
+				D6E5C7301D4C38190090D2F5 /* ImageFromTableViewCell.xib in Resources */,
 				C256DCD01D3F0BAE000B4FB4 /* bubble-default-incoming-green@2x.png in Resources */,
 				C256DC731D3F0B66000B4FB4 /* demo-avatar-jobs.png in Resources */,
 				C2A5FAF31D36594200F269B0 /* LaunchScreen.storyboard in Resources */,
@@ -2090,6 +2126,7 @@
 				C256DCE31D3F0BAE000B4FB4 /* bubble-flat-outgoing.png in Resources */,
 				D6582BA91D475296005D3465 /* cell4.png in Resources */,
 				C2B15D781D4B033400F501A5 /* 高圆圆.png in Resources */,
+				D6E5C72B1D4C373A0090D2F5 /* yuyin2.png in Resources */,
 				C2A5FB321D365DE800F269B0 /* navigationButtonReturn@3x.png in Resources */,
 				D6582BB21D475296005D3465 /* aaa.png in Resources */,
 				C256DD2D1D3F1253000B4FB4 /* FindTableViewCell.xib in Resources */,
@@ -2127,6 +2164,7 @@
 				DD78CEC91D4B379A000179E3 /* RecommendSearchTableViewCell.xib in Resources */,
 				D6582BBB1D475296005D3465 /* 3.jpg in Resources */,
 				C2A5FB2C1D365DE800F269B0 /* bg_nav.png in Resources */,
+				D6E5C72A1D4C373A0090D2F5 /* tianjia.png in Resources */,
 				C2A5FB281D365DE800F269B0 /* 2image.png in Resources */,
 				C2B15D561D4AFEF300F501A5 /* FamilyGroup.plist in Resources */,
 				C256DCE51D3F0BAE000B4FB4 /* bubble-square-incoming-selected.png in Resources */,
@@ -2185,6 +2223,7 @@
 				C2A5FB351D365DE800F269B0 /* paperH.png in Resources */,
 				C256DCD21D3F0BAE000B4FB4 /* bubble-default-incoming-selected@2x.png in Resources */,
 				C256DCFA1D3F0BAE000B4FB4 /* send@2x.png in Resources */,
+				D6E5C73B1D4C38810090D2F5 /* ImageToTableViewCell.xib in Resources */,
 				C2B15D251D4AFABC00F501A5 /* CollectTableViewCell.xib in Resources */,
 				D6582BB61D475296005D3465 /* 8.jpg in Resources */,
 				C2B15D951D4B033400F501A5 /* shift@2x.png in Resources */,
@@ -2349,6 +2388,7 @@
 				C2B15D491D4AFE9900F501A5 /* ReplyInputView.m in Sources */,
 				C2B15D401D4AFE7800F501A5 /* FamilyGroup.m in Sources */,
 				DD78CF101D4B38D3000179E3 /* HYBModalTransition.m in Sources */,
+				D6E5C73F1D4C39EF0090D2F5 /* ChangeNameViewController.m in Sources */,
 				C256DD001D3F0BAE000B4FB4 /* UIView+AnimationOptionsForCurve.m in Sources */,
 				C256DD2B1D3F1253000B4FB4 /* FindRequest.m in Sources */,
 				DD78CF131D4B38E7000179E3 /* CityViewController.m in Sources */,
@@ -2382,6 +2422,7 @@
 				C2B15D241D4AFABC00F501A5 /* CollectTableViewCell.m in Sources */,
 				D6582B8E1D475264005D3465 /* secondViewController.m in Sources */,
 				DD78CEAA1D4B36C6000179E3 /* GiFHUD.m in Sources */,
+				D6E5C73A1D4C38810090D2F5 /* ImageToTableViewCell.m in Sources */,
 				C2B15D201D4AF89200F501A5 /* HomeUserInfoModel.m in Sources */,
 				C256DCFF1D3F0BAE000B4FB4 /* UIImage+JSMessagesView.m in Sources */,
 				C2B15D481D4AFE9900F501A5 /* FamilyGroupCell.m in Sources */,
@@ -2405,6 +2446,7 @@
 				D6582B891D475264005D3465 /* SetModel.m in Sources */,
 				C2B15D1F1D4AF89200F501A5 /* HomePageModel.m in Sources */,
 				D6582B921D475264005D3465 /* AsAHuntViewController.m in Sources */,
+				D6E5C72F1D4C38190090D2F5 /* ImageFromTableViewCell.m in Sources */,
 				C256DC7B1D3F0B9F000B4FB4 /* MessageChatTableViewCell.m in Sources */,
 				DD78CF0D1D4B38D3000179E3 /* HYBBaseTransition.m in Sources */,
 			);

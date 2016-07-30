@@ -42,9 +42,19 @@
     headImageView.layer.masksToBounds = YES;
     headImageView.layer.cornerRadius = headImageView.bounds.size.width / 2.0;
     headImageView.backgroundColor = [UIColor redColor];
-    headImageView.image = [JJZshare shareheadImage].image;
+    
+    AppDelegate * app = [UIApplication sharedApplication].delegate;
+    if (app.hasLogined) {
+        if ([JJZshare shareheadImage].headImage) {
+            NSString *headImage = [JJZshare shareheadImage].headImage;
+            NSData *imageData = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"imageName:%@",headImage]];
+            headImageView.image = [UIImage imageWithData:imageData];
+        }
+    }else{
+        headImageView.image = nil;
+    }
     UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(70, 27, 80, 20)];
-    nameLabel.text = [JJZshare shareheadImage].name;
+    nameLabel.text = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"myUserName%@",[JJZshare shareheadImage].headImage]];
     UILabel *integral = [[UILabel alloc]initWithFrame:CGRectMake(70, 47, 150, 15)];
     integral.text = [JJZshare shareheadImage].integral;
     //label字体大小

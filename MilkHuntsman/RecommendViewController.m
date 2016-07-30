@@ -321,10 +321,10 @@ FirstFiveCellDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section < 5 &&indexPath.section >= 0) {
-        return 185;
+        return WindowHeight * 0.3;
     }
-    return WindowHeight * 0.3;
-
+    return WindowHeight * 0.4;
+    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
