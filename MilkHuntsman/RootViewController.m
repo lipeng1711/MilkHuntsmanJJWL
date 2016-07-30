@@ -34,10 +34,10 @@
     [self setChildButton:btn2 title:@"发现" image:@"video" selected:@"videoH"];
     
     UIButton *btn3 = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [self setChildButton:btn3 title:@"加号" image:@"2image" selected:@"2imageH"];
+    [self setChildButton:btn3 title:@"加号" image:@"" selected:@""];
     
     UIButton *btn4 = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [self setChildButton:btn4 title:@"消息" image:@"person" selected:@"personH"];
+    [self setChildButton:btn4 title:@"消息" image:@"2image" selected:@"2imageH"];
     
     UIButton *btn5 = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [self setChildButton:btn5 title:@"我的" image:@"person" selected:@"personH"];
@@ -216,7 +216,7 @@
     button.titleLabel.font = [UIFont systemFontOfSize:14];
     // 设置按钮普通状态标题颜色
     [button setTitleColor:[UIColor colorWithRed:0.33 green:0.21 blue:0.15 alpha:1.00] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithRed:38.0/255 green:217.0/255 blue:165.0/255 alpha:1] forState:UIControlStateSelected];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
     return button;
 }
 //实现代理的方法
