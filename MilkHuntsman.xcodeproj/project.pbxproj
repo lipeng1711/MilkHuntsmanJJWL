@@ -187,6 +187,10 @@
 		C2B15DA41D4B1A3200F501A5 /* CoredataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B15DA21D4B1A3200F501A5 /* CoredataModel.m */; };
 		C2B15DA71D4B1A8200F501A5 /* coreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B15DA61D4B1A8200F501A5 /* coreManager.m */; };
 		C2B15DAA1D4B1AA400F501A5 /* CoreSingleHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B15DA91D4B1AA400F501A5 /* CoreSingleHandle.m */; };
+		C2B15DBA1D4B85A100F501A5 /* MilkTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B15DB71D4B85A100F501A5 /* MilkTitle.png */; };
+		C2B15DBB1D4B85A100F501A5 /* MilkTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B15DB81D4B85A100F501A5 /* MilkTitle@2x.png */; };
+		C2B15DBC1D4B85A100F501A5 /* MilkTitle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B15DB91D4B85A100F501A5 /* MilkTitle@3x.png */; };
+		C2B15DBE1D4B892900F501A5 /* hah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2B15DBD1D4B892900F501A5 /* hah.jpg */; };
 		D00FD4E745B23C41D646C177 /* libPods-MilkHuntsman.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7A04999F13DCE0DD638E86 /* libPods-MilkHuntsman.a */; };
 		D64AF7AC1D3CC70A004626FD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D64AF7AB1D3CC70A004626FD /* libz.tbd */; };
 		D64AF7AE1D3CC718004626FD /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D64AF7AD1D3CC718004626FD /* libicucore.tbd */; };
@@ -292,7 +296,6 @@
 		DD78CEB91D4B371D000179E3 /* RecommendSearchBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CEB81D4B371D000179E3 /* RecommendSearchBarModel.m */; };
 		DD78CEBE1D4B3769000179E3 /* RecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CEBD1D4B3769000179E3 /* RecommendView.m */; };
 		DD78CEC21D4B377A000179E3 /* FifthTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CEC01D4B377A000179E3 /* FifthTableViewCell.m */; };
-		DD78CEC31D4B377A000179E3 /* bei.png in Resources */ = {isa = PBXBuildFile; fileRef = DD78CEC11D4B377A000179E3 /* bei.png */; };
 		DD78CEC81D4B379A000179E3 /* RecommendSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CEC61D4B379A000179E3 /* RecommendSearchTableViewCell.m */; };
 		DD78CEC91D4B379A000179E3 /* RecommendSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD78CEC71D4B379A000179E3 /* RecommendSearchTableViewCell.xib */; };
 		DD78CED01D4B37B2000179E3 /* InternalView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CECB1D4B37B2000179E3 /* InternalView.m */; };
@@ -574,6 +577,10 @@
 		C2B15DA61D4B1A8200F501A5 /* coreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = coreManager.m; sourceTree = "<group>"; };
 		C2B15DA81D4B1AA400F501A5 /* CoreSingleHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSingleHandle.h; sourceTree = "<group>"; };
 		C2B15DA91D4B1AA400F501A5 /* CoreSingleHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreSingleHandle.m; sourceTree = "<group>"; };
+		C2B15DB71D4B85A100F501A5 /* MilkTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MilkTitle.png; sourceTree = "<group>"; };
+		C2B15DB81D4B85A100F501A5 /* MilkTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MilkTitle@2x.png"; sourceTree = "<group>"; };
+		C2B15DB91D4B85A100F501A5 /* MilkTitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MilkTitle@3x.png"; sourceTree = "<group>"; };
+		C2B15DBD1D4B892900F501A5 /* hah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hah.jpg; sourceTree = "<group>"; };
 		D64AF7AB1D3CC70A004626FD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D64AF7AD1D3CC718004626FD /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		D64AF7AF1D3CC722004626FD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -737,7 +744,6 @@
 		DD78CEBD1D4B3769000179E3 /* RecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendView.m; sourceTree = "<group>"; };
 		DD78CEBF1D4B377A000179E3 /* FifthTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthTableViewCell.h; sourceTree = "<group>"; };
 		DD78CEC01D4B377A000179E3 /* FifthTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthTableViewCell.m; sourceTree = "<group>"; };
-		DD78CEC11D4B377A000179E3 /* bei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bei.png; sourceTree = "<group>"; };
 		DD78CEC51D4B379A000179E3 /* RecommendSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendSearchTableViewCell.h; sourceTree = "<group>"; };
 		DD78CEC61D4B379A000179E3 /* RecommendSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendSearchTableViewCell.m; sourceTree = "<group>"; };
 		DD78CEC71D4B379A000179E3 /* RecommendSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendSearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -1414,6 +1420,9 @@
 		C2B15D991D4B034300F501A5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C2B15DB71D4B85A100F501A5 /* MilkTitle.png */,
+				C2B15DB81D4B85A100F501A5 /* MilkTitle@2x.png */,
+				C2B15DB91D4B85A100F501A5 /* MilkTitle@3x.png */,
 				C2B15D571D4B033400F501A5 /* 高圆圆.png */,
 				C2B15D581D4B033400F501A5 /* 林峰.png */,
 				C2B15D591D4B033400F501A5 /* addPictures.png */,
@@ -1892,7 +1901,7 @@
 			children = (
 				DD78CEBF1D4B377A000179E3 /* FifthTableViewCell.h */,
 				DD78CEC01D4B377A000179E3 /* FifthTableViewCell.m */,
-				DD78CEC11D4B377A000179E3 /* bei.png */,
+				C2B15DBD1D4B892900F501A5 /* hah.jpg */,
 			);
 			name = FifthCell;
 			sourceTree = "<group>";
@@ -2125,6 +2134,7 @@
 				C2A5FB3C1D365DE800F269B0 /* video@2x.png in Resources */,
 				C256DCD91D3F0BAE000B4FB4 /* bubble-default-outgoing.png in Resources */,
 				D6582BB01D475296005D3465 /* 3-8.png in Resources */,
+				C2B15DBB1D4B85A100F501A5 /* MilkTitle@2x.png in Resources */,
 				C256DCFB1D3F0BAE000B4FB4 /* messageReceived.aiff in Resources */,
 				C256DD071D3F0BC1000B4FB4 /* MessageTableViewCell.xib in Resources */,
 				C256DCDF1D3F0BAE000B4FB4 /* bubble-flat-outgoing-old.png in Resources */,
@@ -2169,7 +2179,6 @@
 				C2B15D8A1D4B033400F501A5 /* pic1.png in Resources */,
 				D6582BAB1D475296005D3465 /* cell2.png in Resources */,
 				C2B15D841D4B033400F501A5 /* icon3.jpg in Resources */,
-				DD78CEC31D4B377A000179E3 /* bei.png in Resources */,
 				C2B15D8B1D4B033400F501A5 /* pic2.png in Resources */,
 				C256DCEF1D3F0BAE000B4FB4 /* input-bar-flat.png in Resources */,
 				DD78CEAB1D4B36C6000179E3 /* shua2.gif in Resources */,
@@ -2186,6 +2195,7 @@
 				C256DCE71D3F0BAE000B4FB4 /* bubble-square-incoming.png in Resources */,
 				C256DCEC1D3F0BAE000B4FB4 /* bubble-square-outgoing@2x.png in Resources */,
 				C256DCF31D3F0BAE000B4FB4 /* input-field.png in Resources */,
+				C2B15DBA1D4B85A100F501A5 /* MilkTitle.png in Resources */,
 				C2B15D861D4B033400F501A5 /* icon5.png in Resources */,
 				C2B15D931D4B033400F501A5 /* reply.png in Resources */,
 				C2A5FB3D1D365DE800F269B0 /* videoH.png in Resources */,
@@ -2193,6 +2203,7 @@
 				D6582BAC1D475296005D3465 /* cell1.png in Resources */,
 				C256DCD61D3F0BAE000B4FB4 /* bubble-default-outgoing-green@2x.png in Resources */,
 				C256DCCF1D3F0BAE000B4FB4 /* bubble-default-incoming-green.png in Resources */,
+				C2B15DBC1D4B85A100F501A5 /* MilkTitle@3x.png in Resources */,
 				D6582B7B1D475264005D3465 /* integralCollectionViewCell.xib in Resources */,
 				D6E6A6561D4A070C008453B2 /* Banned_sign.png in Resources */,
 				D6582BBC1D475296005D3465 /* 2.jpg in Resources */,
@@ -2200,6 +2211,7 @@
 				C2B15D921D4B033400F501A5 /* picture4.png in Resources */,
 				C256DCEA1D3F0BAE000B4FB4 /* bubble-square-outgoing-selected@2x.png in Resources */,
 				D6582B831D475264005D3465 /* FromTableViewCell.xib in Resources */,
+				C2B15DBE1D4B892900F501A5 /* hah.jpg in Resources */,
 				C2B15D871D4B033400F501A5 /* left_circular.png in Resources */,
 				C256DCDA1D3F0BAE000B4FB4 /* bubble-default-outgoing@2x.png in Resources */,
 				C2B15D891D4B033400F501A5 /* location.png in Resources */,

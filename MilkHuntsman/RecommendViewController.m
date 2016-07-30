@@ -55,6 +55,8 @@ FirstFiveCellDelegate
 @property (strong, nonatomic) NSMutableArray *rootArray;
 @property (nonatomic, strong) HYBModalTransition *transition;
 
+@property (assign, nonatomic) BOOL isNight;
+
 @end
 
 @implementation RecommendViewController
@@ -91,7 +93,37 @@ FirstFiveCellDelegate
     [self addAllViews];
     [self requestRecommend];
     [self reloadData];
+    
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MilkTitle"]];
+    
+    //注册观察者,接收通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeToNight:) name:@"changeToNight" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeToDay:) name:@"changeToDay" object:nil];
+    
 }
+
+#pragma mark ======== 夜间模式 (这里能优化) ===============================
+- (void)changeToNight:(NSNotification *)notification{
+    NSDictionary *userInfo = [notification userInfo];
+    self.isNight = [[userInfo objectForKey:@"status"] boolValue];
+    if (self.isNight) {
+        self.recommendTableView.backgroundColor = [UIColor blackColor];
+        self.recommendTableView.alpha = 0.9;
+        self.view.backgroundColor = [UIColor blackColor];
+    }
+}
+
+- (void)changeToDay:(NSNotification *)notification{
+    NSDictionary *userInfo = [notification userInfo];
+    self.isNight = [[userInfo objectForKey:@"statusDay"] boolValue];
+    if (!self.isNight) {
+        self.recommendTableView.backgroundColor = [UIColor whiteColor];
+        self.recommendTableView.alpha = 1;
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
+}
+
 
 - (void)reloadData
 {
@@ -289,10 +321,10 @@ FirstFiveCellDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section < 5 &&indexPath.section >= 0) {
-        return 185;
+        return WindowHeight * 0.3;
     }
-    return WindowHeight * 0.3;
-
+    return WindowHeight * 0.4;
+    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

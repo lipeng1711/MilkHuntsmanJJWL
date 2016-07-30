@@ -35,7 +35,7 @@
         self.isChangedBig = YES;
         //self.alpha = 0;
         //self.backgroundColor = [UIColor redColor];
-        
+/*
         UITapGestureRecognizer *tapGser = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(disappear)];
         tapGser.numberOfTouchesRequired = 1;
         tapGser.numberOfTapsRequired = 1;
@@ -45,6 +45,7 @@
         doubleTapGser.numberOfTapsRequired = 2;
         [self addGestureRecognizer:doubleTapGser];
         [tapGser requireGestureRecognizerToFail:doubleTapGser];
+*/
     }
     return self;
 }

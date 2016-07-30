@@ -375,12 +375,12 @@ static float kCameraScale=1.0;
         imv.transform=CGAffineTransformMakeRotation(M_PI);
     [self.view addSubview:imv];
     imv.userInteractionEnabled=YES;
-    CGFloat xpos=20;
-    CGFloat ypos=100;
+    CGFloat xpos = 20;
+    CGFloat ypos = 100;
     if(_input.device.position==AVCaptureDevicePositionFront)
     {
-        xpos=WindownWidth-80;
-        ypos=WindowHeight-100;
+        xpos = WindownWidth - 80;
+        ypos = WindowHeight - 100;
     }
     UIButton *cancelBtn=[[UIButton alloc]initWithFrame:CGRectMake(xpos, ypos, 60, 40)];
     [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];

@@ -133,8 +133,8 @@
         //NSLog(@"%@",[friendGroup.pictures objectAtIndex:i]);
         //NSLog(@"%lu",(unsigned long)[self.picturesView count]);
         UIImageView *pictureView = [[UIImageView alloc]init];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageView:)];
-        [pictureView addGestureRecognizer:tap];
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageView:)];
+//        [pictureView addGestureRecognizer:tap];
         pictureView.tag = imageTag + i;
         //NSLog(@"%ld",(long)pictureView.tag);
         pictureView.userInteractionEnabled = YES;

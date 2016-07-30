@@ -34,6 +34,7 @@
     self.searchBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     self.searchBtn.frame = CGRectMake(10, 0, WindownWidth - 80, 44);
     [self.searchBtn setTitle:@"搜索活动关键字、商圈、分类" forState:(UIControlStateNormal)];
+    self.searchBtn.titleLabel.font = [UIFont systemFontOfSize:15.0];
     [self.searchBtn setTitleColor:[UIColor lightGrayColor] forState:(UIControlStateNormal)];
     self.searchBtn.layer.shadowOffset = CGSizeMake(0, 5);
     self.searchBtn.layer.shadowRadius = 5.0;
@@ -48,19 +49,21 @@
     [self.addressBtn setImage:[UIImage imageNamed:@"icon_paopao_waterdrop_streetscape@2x.png"] forState:(UIControlStateNormal)];
     [self addSubview:self.addressBtn];
     self.addressBtn.backgroundColor = [UIColor whiteColor];
-
+    
     //---------------添加轮播图---------------------------
     self.recommendScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44, WindownWidth, 150)];
     self.recommendScrollView.contentSize = CGSizeMake(WindownWidth * 5, 0);
     self.recommendScrollView.pagingEnabled = YES;
     NSInteger kHeight = self.recommendScrollView.frame.size.height;
+    self.recommendScrollView.showsHorizontalScrollIndicator = NO;
+    
     for (int i = 0; i < array.count; i ++) {
         UIImageView *tempImageV = [UIImageView new];
         [tempImageV setImageWithURL:[NSURL URLWithString:array[i]]];
         tempImageV.frame = CGRectMake(WindownWidth * i, 0, WindownWidth, kHeight);
         [self.recommendScrollView addSubview:tempImageV];
         
-//-----------------------每个tempView添加一个手势-----------------------
+        //-----------------------每个tempView添加一个手势-----------------------
         tempImageV.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
         [tempImageV  addGestureRecognizer:tapGesture];
@@ -70,7 +73,7 @@
     [self addSubview:self.recommendScrollView];
     
     
-//------------------添加pageControl-------------------
+    //------------------添加pageControl-------------------
     self.recommendPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(WindownWidth * 0.38, kHeight + 10, WindownWidth * 0.3, 30)];
     self.recommendPageControl.numberOfPages = array.count;
     [self addSubview:self.recommendPageControl];
@@ -133,9 +136,8 @@ int a = 0;
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     self.recommendPageControl.currentPage = self.recommendScrollView.contentOffset.x / WindownWidth;
-
+    
 }
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

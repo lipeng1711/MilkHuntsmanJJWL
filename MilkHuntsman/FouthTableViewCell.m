@@ -42,6 +42,7 @@
     self.addressLabel.backgroundColor = [UIColor clearColor];
     self.priceLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.backgroundColor = [UIColor clearColor];
+    
 }
 
 - (void)layoutSubviews
@@ -56,21 +57,24 @@
     self.titleLabel.frame = CGRectMake(5, CGRectGetMaxY(self.bigImageView.frame), kWidth - 130, 35);
     self.addressLabel.frame = CGRectMake(5, CGRectGetMaxY(self.titleLabel.frame), kWidth - 90, 35);
     self.priceLabel.frame = CGRectMake(kWidth - 75, CGRectGetMaxY(self.titleLabel.frame), 55, 35);
+    self.addressLabel.font = [UIFont systemFontOfSize:14.0];
+    self.titleLabel.font = [UIFont systemFontOfSize:16.0];
+    self.addressLabel.textColor = [UIColor lightGrayColor];
+    self.priceLabel.textColor = [UIColor redColor];
     self.litileView.layer.cornerRadius = self.litileView.bounds.size.width/ 2;
-    self.priceLabel.tintColor = [UIColor redColor];
     self.litileView.layer.masksToBounds = YES;
     
 }
 //--------------------赋值--------------------
 - (void)setRecommendmodel:(RecommendModel *)recommendmodel
 {
-        _recommendmodel = recommendmodel;
-        [_bigImageView setImageWithURL:[NSURL URLWithString:_recommendmodel.title_page]];
-        [_litileImageView setImageWithURL:[NSURL URLWithString:_recommendmodel.user[@"avatar_l"]]];
-        _titleLabel.text = [NSString stringWithFormat:@"%@",_recommendmodel.title];
-        _priceLabel.text = [NSString stringWithFormat:@"¥%@",_recommendmodel.price];
-        _addressLabel.text = [NSString stringWithFormat:@"%@ · %@人喜欢",_recommendmodel.address,_recommendmodel.like_count];
-
+    _recommendmodel = recommendmodel;
+    [_bigImageView setImageWithURL:[NSURL URLWithString:_recommendmodel.title_page]];
+    [_litileImageView setImageWithURL:[NSURL URLWithString:_recommendmodel.user[@"avatar_l"]]];
+    _titleLabel.text = [NSString stringWithFormat:@"%@",_recommendmodel.title];
+    _priceLabel.text = [NSString stringWithFormat:@"¥%@",_recommendmodel.price];
+    _addressLabel.text = [NSString stringWithFormat:@"%@ · %@人喜欢",_recommendmodel.address,_recommendmodel.like_count];
+    
 }
 
 - (void)awakeFromNib {
@@ -79,7 +83,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

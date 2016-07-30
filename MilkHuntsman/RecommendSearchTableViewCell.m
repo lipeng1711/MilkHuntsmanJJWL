@@ -12,7 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    
+    self.bigImageView.layer.cornerRadius = 8;
+    self.bigImageView.layer.masksToBounds = YES;
     self.litileView.layer.cornerRadius = self.litileView.frame.size.width / 2;
     self.litileImageView.layer.cornerRadius = self.litileImageView.frame.size.width / 2;
     self.bigImageView.layer.cornerRadius = 5;
@@ -35,7 +36,7 @@
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

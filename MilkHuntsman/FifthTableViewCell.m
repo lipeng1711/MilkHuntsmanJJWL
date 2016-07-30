@@ -19,7 +19,7 @@
 }
 - (void)addAllViews
 {
-    self.backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bei.png"]];
+    self.backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hah.jpg"]];
     
     [self.contentView addSubview:self.backImageView];
     _backGroundView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -27,6 +27,7 @@
     _backGroundView.backgroundColor = [UIColor clearColor];
     self.recommendScrollView = [UIScrollView new];
     [self.contentView addSubview:self.recommendScrollView];
+    self.recommendScrollView.showsHorizontalScrollIndicator = NO;
     self.recommendScrollView.backgroundColor = [UIColor clearColor];
     UIButton *button1 = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [button1 setTitle:@"本地生活" forState:(UIControlStateNormal)];
@@ -77,7 +78,7 @@
     _btn5.layer.masksToBounds = YES;
     _btn6.layer.masksToBounds = YES;
     _timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
-
+    
 }
 
 - (void)timerAction:(NSTimer *)timer
@@ -96,16 +97,18 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.recommendScrollView.frame = CGRectMake(0, 0, WindownWidth, WindowHeight * 0.25);
+    self.recommendScrollView.frame = CGRectMake(0, 0, WindownWidth, WindowHeight * 0.3);
     self.recommendScrollView.contentSize = CGSizeMake(WindownWidth * 1.25, 0);
-    self.backImageView.frame = CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height);
+    self.backImageView.frame = CGRectMake(0, 0, WindownWidth, WindowHeight * 0.3);
+    NSInteger kWidth = self.contentView.frame.size.width;
+    NSInteger kHeight = self.contentView.frame.size.height;
     self.backGroundView.frame = self.backImageView.frame;
     _btn1.frame = CGRectMake(50, 20, 80, 50);
-    _btn2.frame = CGRectMake(180, 20, 80, 50);
-    _btn3.frame = CGRectMake(350, 20, 80, 50);
-    _btn4.frame = CGRectMake(50, 120, 80, 50);
-    _btn5.frame = CGRectMake(180, 120, 80, 50);
-    _btn6.frame = CGRectMake(350, 120, 80, 50);
+    _btn2.frame = CGRectMake(kWidth * 0.5, 20, 80, 50);
+    _btn3.frame = CGRectMake(kWidth * 0.85, 20, 80, 50);
+    _btn4.frame = CGRectMake(50, kHeight - 50, 80, 50);
+    _btn5.frame = CGRectMake(kWidth * 0.5, kHeight - 50, 80, 50);
+    _btn6.frame = CGRectMake(kWidth * 0.85, kHeight - 50, 80, 50);
     [_btn1 sizeToFit];
     [_btn2 sizeToFit];
     [_btn3 sizeToFit];
@@ -122,13 +125,14 @@
     
     //设置动画播放时长(2s)
     [UIView setAnimationDuration:2];
-    
-    _btn1.frame = CGRectMake(80, 60, 80, 50);
-    _btn2.frame = CGRectMake(180, 60, 80, 50);
-    _btn3.frame = CGRectMake(400, 70, 80, 50);
-    _btn4.frame = CGRectMake(20, 100, 80, 50);
-    _btn5.frame = CGRectMake(150, 100, 80, 50);
-    _btn6.frame = CGRectMake(300, 70, 80, 50);
+    NSInteger kWidth = self.contentView.frame.size.width;
+    NSInteger kHeight = self.contentView.frame.size.height;
+    _btn1.frame = CGRectMake(80, 50, 80, 50);
+    _btn2.frame = CGRectMake(kWidth * 0.5, 50, 80, 50);
+    _btn3.frame = CGRectMake(kWidth * 0.85 + 50, 60, 80, 50);
+    _btn4.frame = CGRectMake(20, kHeight - 63, 80, 50);
+    _btn5.frame = CGRectMake(kWidth * 0.45 - 30, kHeight - 63, 80, 50);
+    _btn6.frame = CGRectMake(kWidth * 0.85 - 50, kHeight - 75, 80, 50);
     [_btn1 sizeToFit];
     [_btn2 sizeToFit];
     [_btn3 sizeToFit];
@@ -153,13 +157,14 @@
     
     //设置动画播放时长(2s)
     [UIView setAnimationDuration:2];
-    
+    NSInteger kWidth = self.contentView.frame.size.width;
+    NSInteger kHeight = self.contentView.frame.size.height;
     _btn1.frame = CGRectMake(50, 20, 80, 50);
-    _btn2.frame = CGRectMake(180, 20, 80, 50);
-    _btn3.frame = CGRectMake(350, 20, 80, 50);
-    _btn4.frame = CGRectMake(50, 120, 80, 50);
-    _btn5.frame = CGRectMake(180, 120, 80, 50);
-    _btn6.frame = CGRectMake(350, 120, 80, 50);
+    _btn2.frame = CGRectMake(kWidth * 0.5, 20, 80, 50);
+    _btn3.frame = CGRectMake(kWidth * 0.85, 20, 80, 50);
+    _btn4.frame = CGRectMake(50, kHeight - 50, 80, 50);
+    _btn5.frame = CGRectMake(kWidth * 0.5, kHeight - 50, 80, 50);
+    _btn6.frame = CGRectMake(kWidth * 0.85, kHeight - 50, 80, 50);
     [_btn1 sizeToFit];
     [_btn2 sizeToFit];
     [_btn3 sizeToFit];
@@ -183,8 +188,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
-
 @end
