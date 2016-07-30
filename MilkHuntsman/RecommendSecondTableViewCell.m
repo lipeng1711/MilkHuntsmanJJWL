@@ -33,9 +33,10 @@
     
     //--------------------添加scrollView---------------
     NSInteger kWidth = WindownWidth * 0.8;
-    NSInteger kHeight = WindowHeight * 0.3;
-    self.scrollView.frame = CGRectMake(0, 0, WindownWidth, kHeight);
-    self.scrollView.contentSize = CGSizeMake(kWidth * 6 + 5, 0);
+    NSInteger kHeight = WindowHeight * 0.4;
+    self.scrollView.frame = CGRectMake(5, 0, WindownWidth, kHeight);
+    self.scrollView.contentSize = CGSizeMake(kWidth * 6 + 6, 0);
+    self.scrollView.showsHorizontalScrollIndicator = NO;
     
     
     for (int i = 0; i < 6; i ++) {
@@ -45,7 +46,7 @@
         self.tempView.backgroundColor = [UIColor whiteColor];
         [self.scrollView addSubview:self.tempView];
         self.scrollView.backgroundColor = [UIColor whiteColor];
-//-------------------在tempView上添加imageView-------------
+        //-------------------在tempView上添加imageView-------------
         self.bigImageView = [UIImageView new];
         self.bigImageView.frame = CGRectMake(0, 0, kWidth - 5, kHeight - 100);
         self.litleImageView = [UIImageView new];
@@ -57,7 +58,7 @@
         self.litleImageView.layer.cornerRadius = self.litleImageView.bounds.size.width / 2;
         self.litleImageView.layer.masksToBounds = YES;
         
-//------------------在tempView上添加两个label---------------
+        //------------------在tempView上添加两个label---------------
         self.titleLabel = [UILabel new];
         self.descriptionLabel = [UILabel new];
         self.titleLabel.frame = CGRectMake(30, CGRectGetMaxY(self.litleImageView.frame), kWidth - 60, 35);
@@ -71,10 +72,10 @@
         self.descriptionLabel.textAlignment = NSTextAlignmentCenter;
         self.descriptionLabel.font = [UIFont systemFontOfSize:15.0];
         self.descriptionLabel.numberOfLines = 0;
+        self.descriptionLabel.textColor = [UIColor lightGrayColor];
         
-
         
-//-----------------------赋值------------------------
+        //-----------------------赋值------------------------
         _imageArr = @[
                       @"http://photos.breadtrip.com/dashboard_tp_1459146605.210.336334441563.jpg?imageView/2/w/640/",
                       @"http://photos.breadtrip.com/dashboard_tp_1440385690.170.569257201295.jpg?imageView/2/w/640/",
@@ -89,14 +90,14 @@
         self.descriptionLabel.text = _secondArr[i][@"product_title"];
         
         
-//-----------------------每个tempView添加一个手势-----------------------
+        //-----------------------每个tempView添加一个手势-----------------------
         self.tempView.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
         [self.tempView  addGestureRecognizer:tapGesture];
         
         
     }
-
+    
 }
 
 - (void)tapAction:(UITapGestureRecognizer *)sender
@@ -111,7 +112,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

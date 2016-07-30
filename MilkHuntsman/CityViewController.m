@@ -40,9 +40,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor cyanColor];
+    self.view.backgroundColor = [UIColor colorWithRed:53/256.0 green:191/256.0 blue:202/256.0 alpha:1];
     self.automaticallyAdjustsScrollViewInsets = NO;
-
+    
     //初始化scrollView
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 90, WindownWidth, self.view.frame.size.height - 150)];
     self.scrollView.backgroundColor = [UIColor cyanColor];
@@ -51,7 +51,7 @@
     [self.view addSubview:self.scrollView];
     self.scrollView.delegate = self;
     [self addAllViews];
-
+    
 }
 
 - (void)addAllViews
@@ -62,7 +62,7 @@
     [self.recommendBackBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
     [self.recommendBackBtn addTarget:self action:@selector(buttonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:self.recommendBackBtn];
-
+    
     
 #pragma mark --添加两个tableview
     _internalView = [[InternalView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, self.view.frame.size.height - 90)];
@@ -80,7 +80,7 @@
     
     LPSegmentedControl *segmentedControl = [[LPSegmentedControl alloc] initWithItems:@[@"国内",@"国外"]];
     segmentedControl.titleTextColor = [UIColor blackColor];
-    segmentedControl.selectedTitleTextColor = [UIColor cyanColor];
+    segmentedControl.selectedTitleTextColor = [UIColor colorWithRed:53/256.0 green:191/256.0 blue:202/256.0 alpha:1];
     segmentedControl.selectedTitleFont = [UIFont systemFontOfSize:16.0f];
     segmentedControl.segmentIndicatorBackgroundColor = [UIColor whiteColor];
     segmentedControl.borderWidth = 0.0f;

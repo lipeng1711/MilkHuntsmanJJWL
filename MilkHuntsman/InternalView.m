@@ -66,7 +66,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
     }
-    cell.backgroundColor = [UIColor cyanColor];
+    cell.backgroundColor = [UIColor colorWithRed:53/256.0 green:191/256.0 blue:202/256.0 alpha:1];
 
     CityModel *model = _internalCityArr[indexPath.row];
     cell.textLabel.text = model.name;
