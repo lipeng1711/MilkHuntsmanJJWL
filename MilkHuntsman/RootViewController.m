@@ -11,6 +11,8 @@
 #import "CameraViewController.h"
 #import "MapViewController.h"
 #import "CreateViewController.h"
+#import "ZJGuidePageHUD.h"
+
 
 @interface RootViewController ()<MilkHuntsmanTabBarDelegate,DCPathButtonDelegate>
 
@@ -21,8 +23,20 @@
 
 @implementation RootViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:BOOLFORKEY]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:BOOLFORKEY];
+        
+        NSArray *imageArray = @[[UIImage imageNamed:@"guideImage1.jpg"],[UIImage imageNamed:@"guideImage2.jpg"],[UIImage imageNamed:@"guideImage3.jpg"],[UIImage imageNamed:@"guideImage4.jpg"],[UIImage imageNamed:@"guideImage5.jpg"]];
+        
+        ZJGuidePageHUD *guidePage = [[ZJGuidePageHUD alloc] zj_initWithFrame:self.view.frame imageArray:imageArray buttonIsHidden:YES];
+        [self.view addSubview:guidePage];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.isNight = YES;
   //把系统自带的tabBar隐藏掉
     self.tabBar.hidden = YES;

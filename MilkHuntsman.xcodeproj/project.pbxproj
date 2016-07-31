@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C21A9DA71D4DEE0C00FCADD6 /* guideImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C21A9DA21D4DEE0C00FCADD6 /* guideImage1.jpg */; };
+		C21A9DA81D4DEE0C00FCADD6 /* guideImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C21A9DA31D4DEE0C00FCADD6 /* guideImage2.jpg */; };
+		C21A9DA91D4DEE0C00FCADD6 /* guideImage3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C21A9DA41D4DEE0C00FCADD6 /* guideImage3.jpg */; };
+		C21A9DAA1D4DEE0C00FCADD6 /* guideImage4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C21A9DA51D4DEE0C00FCADD6 /* guideImage4.jpg */; };
+		C21A9DAB1D4DEE0C00FCADD6 /* guideImage5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C21A9DA61D4DEE0C00FCADD6 /* guideImage5.jpg */; };
+		C21A9DAD1D4DEE1B00FCADD6 /* guideImage_button_backgound.png in Resources */ = {isa = PBXBuildFile; fileRef = C21A9DAC1D4DEE1B00FCADD6 /* guideImage_button_backgound.png */; };
+		C21A9DB01D4DEE3400FCADD6 /* ZJGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C21A9DAF1D4DEE3400FCADD6 /* ZJGuidePageHUD.m */; };
 		C256DC6D1D3F0B3A000B4FB4 /* bread.png in Resources */ = {isa = PBXBuildFile; fileRef = C256DC6C1D3F0B3A000B4FB4 /* bread.png */; };
 		C256DC721D3F0B66000B4FB4 /* ChatChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C256DC6F1D3F0B66000B4FB4 /* ChatChatViewController.m */; };
 		C256DC731D3F0B66000B4FB4 /* demo-avatar-jobs.png in Resources */ = {isa = PBXBuildFile; fileRef = C256DC701D3F0B66000B4FB4 /* demo-avatar-jobs.png */; };
@@ -334,6 +341,14 @@
 		1A7A04999F13DCE0DD638E86 /* libPods-MilkHuntsman.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MilkHuntsman.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C524278E0262FB581EE850 /* Pods-MilkHuntsman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkHuntsman.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkHuntsman/Pods-MilkHuntsman.debug.xcconfig"; sourceTree = "<group>"; };
 		300F7CE7CD1B878211BA92AA /* Pods-MilkHuntsman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkHuntsman.release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkHuntsman/Pods-MilkHuntsman.release.xcconfig"; sourceTree = "<group>"; };
+		C21A9DA21D4DEE0C00FCADD6 /* guideImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage1.jpg; sourceTree = "<group>"; };
+		C21A9DA31D4DEE0C00FCADD6 /* guideImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage2.jpg; sourceTree = "<group>"; };
+		C21A9DA41D4DEE0C00FCADD6 /* guideImage3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage3.jpg; sourceTree = "<group>"; };
+		C21A9DA51D4DEE0C00FCADD6 /* guideImage4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage4.jpg; sourceTree = "<group>"; };
+		C21A9DA61D4DEE0C00FCADD6 /* guideImage5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage5.jpg; sourceTree = "<group>"; };
+		C21A9DAC1D4DEE1B00FCADD6 /* guideImage_button_backgound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guideImage_button_backgound.png; sourceTree = "<group>"; };
+		C21A9DAE1D4DEE3400FCADD6 /* ZJGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJGuidePageHUD.h; sourceTree = "<group>"; };
+		C21A9DAF1D4DEE3400FCADD6 /* ZJGuidePageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJGuidePageHUD.m; sourceTree = "<group>"; };
 		C256DC6C1D3F0B3A000B4FB4 /* bread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bread.png; sourceTree = "<group>"; };
 		C256DC6E1D3F0B66000B4FB4 /* ChatChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatChatViewController.h; sourceTree = "<group>"; };
 		C256DC6F1D3F0B66000B4FB4 /* ChatChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatChatViewController.m; sourceTree = "<group>"; };
@@ -848,6 +863,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C21A9DA11D4DEDF200FCADD6 /* ImagesHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C21A9DAC1D4DEE1B00FCADD6 /* guideImage_button_backgound.png */,
+				C21A9DA21D4DEE0C00FCADD6 /* guideImage1.jpg */,
+				C21A9DA31D4DEE0C00FCADD6 /* guideImage2.jpg */,
+				C21A9DA41D4DEE0C00FCADD6 /* guideImage3.jpg */,
+				C21A9DA51D4DEE0C00FCADD6 /* guideImage4.jpg */,
+				C21A9DA61D4DEE0C00FCADD6 /* guideImage5.jpg */,
+			);
+			name = ImagesHUD;
+			sourceTree = "<group>";
+		};
 		C256DC7D1D3F0BAE000B4FB4 /* MessagesTableViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1170,6 +1198,7 @@
 			children = (
 				C2E85E871D4CDD1700EF8C5F /* 0309TabBarImage */,
 				C2B15D991D4B034300F501A5 /* Images */,
+				C21A9DA11D4DEDF200FCADD6 /* ImagesHUD */,
 				C2A5FAEF1D36594200F269B0 /* Assets.xcassets */,
 				C2A5FAF11D36594200F269B0 /* LaunchScreen.storyboard */,
 				C2A5FAF41D36594200F269B0 /* Info.plist */,
@@ -1212,6 +1241,8 @@
 				C2A5FB081D365AF000F269B0 /* PrefixHeader.pch */,
 				C2A5FB3F1D36614500F269B0 /* RequestUrls.h */,
 				C256DD3A1D3F13AF000B4FB4 /* ZJSingleton.h */,
+				C21A9DAE1D4DEE3400FCADD6 /* ZJGuidePageHUD.h */,
+				C21A9DAF1D4DEE3400FCADD6 /* ZJGuidePageHUD.m */,
 				C2A5FAE61D36594200F269B0 /* AppDelegate.h */,
 				C2A5FAE71D36594200F269B0 /* AppDelegate.m */,
 				C2A5FB0A1D365BA800F269B0 /* MilkHuntsmanTabBar.h */,
@@ -2124,10 +2155,13 @@
 				C256DC7C1D3F0B9F000B4FB4 /* MessageChatTableViewCell.xib in Resources */,
 				C256DCD51D3F0BAE000B4FB4 /* bubble-default-outgoing-green.png in Resources */,
 				C256DCD71D3F0BAE000B4FB4 /* bubble-default-outgoing-selected.png in Resources */,
+				C21A9DAA1D4DEE0C00FCADD6 /* guideImage4.jpg in Resources */,
 				C2B15D881D4B033400F501A5 /* left_round.png in Resources */,
 				D6E5C7301D4C38190090D2F5 /* ImageFromTableViewCell.xib in Resources */,
 				C256DCD01D3F0BAE000B4FB4 /* bubble-default-incoming-green@2x.png in Resources */,
+				C21A9DA91D4DEE0C00FCADD6 /* guideImage3.jpg in Resources */,
 				C2E85EB31D4CDD1700EF8C5F /* video@2x.png in Resources */,
+				C21A9DAD1D4DEE1B00FCADD6 /* guideImage_button_backgound.png in Resources */,
 				C2E85EA71D4CDD1700EF8C5F /* nav_btn.png in Resources */,
 				C256DC731D3F0B66000B4FB4 /* demo-avatar-jobs.png in Resources */,
 				C2A5FAF31D36594200F269B0 /* LaunchScreen.storyboard in Resources */,
@@ -2154,10 +2188,12 @@
 				C256DCE31D3F0BAE000B4FB4 /* bubble-flat-outgoing.png in Resources */,
 				D6582BA91D475296005D3465 /* cell4.png in Resources */,
 				C2B15D781D4B033400F501A5 /* 高圆圆.png in Resources */,
+				C21A9DA81D4DEE0C00FCADD6 /* guideImage2.jpg in Resources */,
 				D6E5C72B1D4C373A0090D2F5 /* yuyin2.png in Resources */,
 				D6582BB21D475296005D3465 /* aaa.png in Resources */,
 				C256DD2D1D3F1253000B4FB4 /* FindTableViewCell.xib in Resources */,
 				C2B15D8F1D4B033400F501A5 /* picture1.png in Resources */,
+				C21A9DA71D4DEE0C00FCADD6 /* guideImage1.jpg in Resources */,
 				C256DCD91D3F0BAE000B4FB4 /* bubble-default-outgoing.png in Resources */,
 				D6582BB01D475296005D3465 /* 3-8.png in Resources */,
 				C2B15DBB1D4B85A100F501A5 /* MilkTitle@2x.png in Resources */,
@@ -2249,6 +2285,7 @@
 				C2E85EA41D4CDD1700EF8C5F /* bg_nav@2x.png in Resources */,
 				C2B15D871D4B033400F501A5 /* left_circular.png in Resources */,
 				C256DCDA1D3F0BAE000B4FB4 /* bubble-default-outgoing@2x.png in Resources */,
+				C21A9DAB1D4DEE0C00FCADD6 /* guideImage5.jpg in Resources */,
 				C2B15D891D4B033400F501A5 /* location.png in Resources */,
 				C2B15D7A1D4B033400F501A5 /* addPictures.png in Resources */,
 				D6582BAF1D475296005D3465 /* 3-7.png in Resources */,
@@ -2457,6 +2494,7 @@
 				C256DD3D1D3F13AF000B4FB4 /* WebViewController.m in Sources */,
 				C2B15D241D4AFABC00F501A5 /* CollectTableViewCell.m in Sources */,
 				D6582B8E1D475264005D3465 /* secondViewController.m in Sources */,
+				C21A9DB01D4DEE3400FCADD6 /* ZJGuidePageHUD.m in Sources */,
 				DD78CEAA1D4B36C6000179E3 /* GiFHUD.m in Sources */,
 				D6E5C73A1D4C38810090D2F5 /* ImageToTableViewCell.m in Sources */,
 				C2B15D201D4AF89200F501A5 /* HomeUserInfoModel.m in Sources */,
@@ -2607,6 +2645,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fengchunyan.MilkHuntsman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -2625,6 +2664,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fengchunyan.MilkHuntsman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
