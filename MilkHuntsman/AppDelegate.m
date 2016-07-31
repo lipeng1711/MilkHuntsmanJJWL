@@ -27,6 +27,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+     sleep(2);
+    
     //初始化应用，appKey和appSecret从后台申请得
     self.hasLogined=NO;
     [SMSSDK registerApp:@"1419a01addae0" withSecret:@"56022de00d8ebbc52cda43f5994739f9"];
