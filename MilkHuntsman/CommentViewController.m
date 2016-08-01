@@ -29,6 +29,7 @@
     [self.commentTableView reloadData];
     RootViewController *milk = (RootViewController *)self.navigationController.parentViewController;
     [milk hiddenTabBar];
+    
 }
 
 //显示tabbar

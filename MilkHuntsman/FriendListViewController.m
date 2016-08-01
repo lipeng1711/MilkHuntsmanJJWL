@@ -35,22 +35,28 @@
     //    [[EMClient sharedClient].contactManager removeDelegate:self];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"添加好友" style:(UIBarButtonItemStylePlain) target:self action:@selector(addFriend)];
+
 }
 //添加好友
 - (void)addFriend{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"添加好友" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确认" style: UIAlertActionStyleDefault handler:nil];
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"添加账号";
-        EMError *error = [[EMClient sharedClient].contactManager addContact:textField.text message:@"我想加您为好友"];
+        
+    }];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+
+        EMError *error = [[EMClient sharedClient].contactManager addContact:alert.textFields.lastObject.text message:@"我想加您为好友"];
         if (!error) {
             NSLog(@"添加好友申请成功");
         }else {
-            NSLog(@"添加失败");
+            NSLog(@"%@添加失败",error);
         }
         [self requestFriendsList];
     }];
+
+   
     [self presentViewController:alert animated:YES completion:nil];
     [alert addAction:cancel];
     [alert addAction:ok];

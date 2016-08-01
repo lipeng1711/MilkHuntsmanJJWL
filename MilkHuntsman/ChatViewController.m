@@ -15,7 +15,8 @@ UITableViewDataSource,
 UITableViewDelegate,
 EMChatManagerDelegate,
 UIImagePickerControllerDelegate,
-UINavigationControllerDelegate
+UINavigationControllerDelegate,
+UIScrollViewDelegate
 >
 @property (weak, nonatomic) IBOutlet UITableView *chatTableView;
 
@@ -28,6 +29,10 @@ UINavigationControllerDelegate
 @property(nonatomic,strong)UIImage *image;
 
 @property(nonatomic)CGFloat height;
+
+@property(nonatomic,strong)UIView *sendView;
+
+@property(nonatomic,strong)UITextView *textView;
 
 @end
 
@@ -43,6 +48,10 @@ UINavigationControllerDelegate
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    self.chatTableView.delegate = self;
+    
+    self.sendView = [UIView new];
     
     self.title = [NSString stringWithFormat:@"和%@聊天",self.userName];
     
@@ -65,8 +74,41 @@ UINavigationControllerDelegate
     [self.chatTableView reloadData];
     
     [self scrollviewToBottom];
-
     
+    //增加监听，当键盘出现或改变时收出消息
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    //增加监听，当键退出时收出消息
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+}
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    //移除消息回调
+    //    [[EMClient sharedClient].chatManager removeDelegate:self];
+}
+-(void)keyboardWillShow:(NSNotification*)notice{
+    //获取键盘的高度
+    NSDictionary *userInfo = [notice userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [aValue CGRectValue];
+    //    int height = keyboardRect.size.height;
+    self.sendView.frame=CGRectMake(0, self.view.frame.size.height - 50 - keyboardRect.size.height, self.view.frame.size.width, 50);
+    self.chatTableView.frame=CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-50-keyboardRect.size.height-64);
+    //storyboard中的视图哪怕没有约束也可能会顶掉一部分代码中的约束
+    //    NSLog(@" tbV frame %@",NSStringFromCGRect(self.chatTableView.frame));
+//    [self scrollviewToBottom];
+}
+-(void)keyboardWillHide:(NSNotification*)notice{
+    self.sendView.frame=CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50);
+    self.chatTableView.frame=CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 50 - 64);
+    [self scrollviewToBottom];
+    //    NSLog(@" tbV keyboard hide frame %@",NSStringFromCGRect(self.chatTableView.frame));
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (scrollView == self.chatTableView) {
+        [self.view endEditing:YES];
+    }
 }
 - (void)viewWillAppear:(BOOL)animated{
     
@@ -85,28 +127,33 @@ UINavigationControllerDelegate
 
 //输入内容界面
 - (void)addSendView{
-    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(50, self.view.bounds.size.height - 45, self.view.bounds.size.width - 160, 40)];
-    textView.backgroundColor = [UIColor colorWithRed:53 / 255.0 green:191 / 255.0 blue:212 / 255.0 alpha:1];
-    [self.view addSubview:textView];
-    self.msgTextView = textView;
+
+    self.sendView.frame = CGRectMake(0, self.view.bounds.size.height - 50, self.view.frame.size.width, 50);
+    self.sendView.backgroundColor = [UIColor colorWithRed:53 / 255.0 green:191 / 255.0 blue:212 / 255.0 alpha:1];
+    [self.view addSubview:self.sendView];
+    
+    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(50, 5, self.view.bounds.size.width - 160, 40)];
+    self.textView.backgroundColor = [UIColor whiteColor];
+    [self.sendView addSubview:self.textView];
+    self.msgTextView = self.textView;
     UIButton *sendBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    sendBtn.frame = CGRectMake(self.view.bounds.size.width - 65, self.view.bounds.size.height - 50, 75, 50);
+    sendBtn.frame = CGRectMake(self.view.bounds.size.width - 65, 5, 75, 50);
     [sendBtn setTitle:@"发送" forState:(UIControlStateNormal)];
     [sendBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
     [sendBtn addTarget:self action:@selector(sendMessage:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.view addSubview:sendBtn];
+    [self.sendView addSubview:sendBtn];
     sendBtn.backgroundColor = [UIColor clearColor];
     UIButton *photoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    photoBtn.frame = CGRectMake(self.view.bounds.size.width - 100, self.view.bounds.size.height - 50, 47, 47);
+    photoBtn.frame = CGRectMake(self.view.bounds.size.width - 100, 5, 47, 47);
     [photoBtn setBackgroundImage:[UIImage imageNamed:@"tianjia.png"] forState:(UIControlStateNormal)];
     [photoBtn addTarget:self action:@selector(photoAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.view addSubview:photoBtn];
+    [self.sendView addSubview:photoBtn];
     
     UIButton *talkBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    talkBtn.frame = CGRectMake(5, self.view.bounds.size.height - 45, 50, 50);
+    talkBtn.frame = CGRectMake(5, 5, 50, 50);
     [talkBtn setBackgroundImage:[UIImage imageNamed:@"yuyin2.png"] forState:(UIControlStateNormal)];
     //    [talkBtn addTarget:self action:@selector(talkAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.view addSubview:talkBtn];
+    [self.sendView addSubview:talkBtn];
 }
 //发送图片按钮
 - (void)photoAction:(UIButton *)btn{
@@ -162,6 +209,7 @@ UINavigationControllerDelegate
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.chatTableView reloadData];
                 [weakSelf scrollviewToBottom];
+                weakSelf.textView.text=@"";
             });
         }];
     }
@@ -240,11 +288,8 @@ UINavigationControllerDelegate
 }
 
 - (void)scrollviewToBottom{
-    
     if (self.msgArr.count < 1) {
-        
         return;
-        
     }
     //获取tableview最后一行
     NSIndexPath *path = [NSIndexPath indexPathForRow:self.msgArr.count - 1 inSection:0];
