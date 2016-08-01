@@ -3,7 +3,7 @@
 //  FriendGroup
 //
 //  Created by Steven on 15/5/6.
-//  Copyright (c) 2015年 luyang. All rights reserved.
+//  Copyright © 2016年 South Park. All rights reserved.
 //
 
 #import "ShowImageView.h"
