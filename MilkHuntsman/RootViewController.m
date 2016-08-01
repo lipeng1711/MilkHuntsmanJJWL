@@ -200,13 +200,11 @@
 }
 
 - (void)showTabBar{
-    
     self.milkHuntsmanTabBar.hidden = NO;
     self.dcButton.hidden = NO;
 }
 
 - (void)hiddenTabBar{
-    
     self.milkHuntsmanTabBar.hidden = YES;
     self.dcButton.hidden = YES;
 }

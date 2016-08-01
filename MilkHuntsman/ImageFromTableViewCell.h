@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #define ImageFromTableViewCell_Identify @"ImageFromTableViewCell_Identify"
 @interface ImageFromTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *headImage;
 @property (weak, nonatomic) IBOutlet UIImageView *fromImage;
 
 @end
