@@ -33,10 +33,11 @@
     [super layoutSubviews];
     //--------------------添加scrollView---------------
     NSInteger kWidth = WindownWidth * 0.4;
-    NSInteger kHeight = WindowHeight * 0.25;
-    self.recommendScrollView.frame = CGRectMake(0, 0, WindownWidth, WindowHeight * 0.25);
-    self.recommendScrollView.contentSize = CGSizeMake(kWidth * 6 + 5, 0);
+    NSInteger kHeight = WindowHeight * 0.3;
+    self.recommendScrollView.frame = CGRectMake(5, 0, WindownWidth, kHeight);
+    self.recommendScrollView.contentSize = CGSizeMake(kWidth * 6 + 6, 0);
     
+    self.recommendScrollView.showsHorizontalScrollIndicator = NO;
     
     
     for (int i = 0; i < 6; i ++) {
@@ -58,9 +59,10 @@
         //------------------在tempView上添加两个label---------------
         self.recommendDescriptionLabel = [UILabel new];
         self.recommendMoneyLabel = [UILabel new];
-        self.recommendDescriptionLabel.frame = CGRectMake(0, CGRectGetMaxY(self.recommendImageView.frame), kWidth - 5, 50);
-        self.recommendMoneyLabel.frame = CGRectMake(CGRectGetMidX(self.recommendDescriptionLabel.frame), CGRectGetMaxY(self.recommendDescriptionLabel.frame), kWidth / 2, 30);
+        self.recommendDescriptionLabel.frame = CGRectMake(0, CGRectGetMaxY(self.recommendImageView.frame), kWidth - 5, kHeight - CGRectGetHeight(self.recommendImageView.frame) - 30);
+        self.recommendMoneyLabel.frame = CGRectMake(CGRectGetMidX(self.recommendDescriptionLabel.frame), CGRectGetMaxY(self.recommendDescriptionLabel.frame), kWidth / 2, kHeight - CGRectGetHeight(self.recommendImageView.frame) - CGRectGetHeight(self.recommendDescriptionLabel.frame));
         self.recommendDescriptionLabel.backgroundColor = [UIColor clearColor];
+        self.recommendMoneyLabel.font = [UIFont systemFontOfSize:15.0];
         self.recommendMoneyLabel.backgroundColor = [UIColor clearColor];
         [self.tempView addSubview:self.recommendDescriptionLabel];
         [self.tempView addSubview:self.recommendMoneyLabel];
@@ -78,13 +80,13 @@
         self.recommendDescriptionLabel.numberOfLines = 0;
         self.recommendMoneyLabel.textColor = [UIColor redColor];
         
-//-----------------------每个tempView添加一个手势-----------------------
+        //-----------------------每个tempView添加一个手势-----------------------
         self.tempView.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
         [self.tempView  addGestureRecognizer:tapGesture];
         
     }
-
+    
 }
 //手势的触发方法
 - (void)tapAction:(UITapGestureRecognizer *)sender
@@ -102,8 +104,9 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
+
 
 @end
