@@ -73,15 +73,21 @@
     UIImageView *backGroundImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, headViewHeight - 2*padding)];
     backGroundImageView.image = [UIImage imageNamed:@"background.jpg"];
     [headView addSubview:backGroundImageView];
-#warning ======== 以下需要传值 ==========
+    
 // 传值头像
     UIImageView *headIconImageView = [[UIImageView alloc]initWithFrame:CGRectMake(padding, headViewHeight - headIconHeight, headIconWidth, headIconHeight)];
-    headIconImageView.image = [UIImage imageNamed:@"headicon"];
+    headIconImageView.layer.masksToBounds = YES;
+    headIconImageView.layer.cornerRadius = headIconImageView.bounds.size.width / 2.0;
+    NSString *headImage = [JJZshare shareheadImage].headImage;
+    NSData *imageData = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"imageName:%@",headImage]];
+    headIconImageView.image = [UIImage imageWithData:imageData];
+    
     [headView addSubview:headIconImageView];
     
 //传值名字
     UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(headIconWidth + 2 * padding, headViewHeight - 0.8*headIconHeight, 100, 15)];
-    nameLabel.text = @"蒙奇·D·路飞";
+#pragma mark ========== 传值 ========== 
+    nameLabel.text = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"myUserName%@",[JJZshare shareheadImage].headImage]];
     nameLabel.font = [UIFont systemFontOfSize:13];
     nameLabel.textColor = [UIColor whiteColor];
     [headView addSubview:nameLabel];

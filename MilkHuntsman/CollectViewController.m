@@ -30,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"我的收藏";
     self.collectTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width,self.view.frame.size.height- 110) style:(UITableViewStylePlain)];
     [self.view addSubview:self.collectTableView];
     
@@ -43,11 +42,6 @@
     self.collectTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction:)];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftAction:)];
-}
-
-- (void)leftAction:(UIBarButtonItem *)sender{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
