@@ -11,7 +11,13 @@
 @implementation ImageFromTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    NSString *headImage = [JJZshare shareheadImage].headImage;
+    NSData *imageData = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"imageName:%@",headImage]];
+    self.headImage.image = [UIImage imageWithData:imageData];
+    
+    self.headImage.layer.masksToBounds = YES;
+    
+    self.headImage.layer.cornerRadius = self.headImage.bounds.size.width / 2.0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

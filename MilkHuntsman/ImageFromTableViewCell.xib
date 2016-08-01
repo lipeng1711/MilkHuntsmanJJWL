@@ -40,6 +40,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="fromImage" destination="os1-DX-N8k" id="wxM-FZ-KIi"/>
+                <outlet property="headImage" destination="dmg-Rr-6g8" id="H5p-tm-cx5"/>
             </connections>
             <point key="canvasLocation" x="453" y="364.5"/>
         </tableViewCell>
