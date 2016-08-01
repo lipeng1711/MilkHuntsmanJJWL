@@ -3,7 +3,7 @@
 //  MyFamily
 //
 //  Created by fengchunyan on 15/6/11.
-//  Copyright (c) 2015年 maili. All rights reserved.
+//  Copyright © 2016年 South Park. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

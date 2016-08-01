@@ -3,7 +3,7 @@
 //  StarScoreDemo
 //
 //  Created by StarLord on 15/7/28.
-//  Copyright (c) 2015年 xxx. All rights reserved.
+//  Copyright © 2016年 South Park. All rights reserved.
 //
 
 #import "StarView.h"
