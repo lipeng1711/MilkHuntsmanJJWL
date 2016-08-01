@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FromTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *headImage;
 @property (weak, nonatomic) IBOutlet UILabel *myLabel;
 -(CGFloat)getHeight:(NSString *)text
                font:(CGFloat)font;

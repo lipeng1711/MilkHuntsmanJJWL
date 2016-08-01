@@ -10,6 +10,9 @@
 #import "DCPathButton.h"
 #import "CameraViewController.h"
 #import "MapViewController.h"
+#import "CreateViewController.h"
+#import "ZJGuidePageHUD.h"
+
 
 @interface RootViewController ()<MilkHuntsmanTabBarDelegate,DCPathButtonDelegate>
 
@@ -20,8 +23,20 @@
 
 @implementation RootViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:BOOLFORKEY]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:BOOLFORKEY];
+        
+        NSArray *imageArray = @[[UIImage imageNamed:@"guideImage1.jpg"],[UIImage imageNamed:@"guideImage2.jpg"],[UIImage imageNamed:@"guideImage3.jpg"],[UIImage imageNamed:@"guideImage4.jpg"],[UIImage imageNamed:@"guideImage5.jpg"]];
+        
+        ZJGuidePageHUD *guidePage = [[ZJGuidePageHUD alloc] zj_initWithFrame:self.view.frame imageArray:imageArray buttonIsHidden:YES];
+        [self.view addSubview:guidePage];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.isNight = YES;
   //把系统自带的tabBar隐藏掉
     self.tabBar.hidden = YES;
@@ -33,10 +48,10 @@
     [self setChildButton:btn2 title:@"发现" image:@"video" selected:@"videoH"];
     
     UIButton *btn3 = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [self setChildButton:btn3 title:@"加号" image:@"2image" selected:@"2imageH"];
+    [self setChildButton:btn3 title:@"加号" image:@"" selected:@""];
     
     UIButton *btn4 = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [self setChildButton:btn4 title:@"消息" image:@"person" selected:@"personH"];
+    [self setChildButton:btn4 title:@"消息" image:@"2image" selected:@"2imageH"];
     
     UIButton *btn5 = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [self setChildButton:btn5 title:@"我的" image:@"person" selected:@"personH"];
@@ -56,8 +71,8 @@
     
     // Configure item buttons
     //
-    DCPathItemButton *itemButton_1 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-music"]
-                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-music-highlighted"]
+    DCPathItemButton *itemButton_1 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-thought"]
+                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-thought-highlighted"]
                                                             backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
                                                  backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
     
@@ -66,8 +81,8 @@
                                                             backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
                                                  backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
     
-        DCPathItemButton *itemButton_3 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-thought"]
-                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-thought-highlighted"]
+        DCPathItemButton *itemButton_3 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-camera"]
+                                                           highlightedImage:[UIImage imageNamed:@"chooser-moment-icon-camera-highlighted"]
                                                             backgroundImage:[UIImage imageNamed:@"chooser-moment-button"]
                                                  backgroundHighlightedImage:[UIImage imageNamed:@"chooser-moment-button-highlighted"]];
     
@@ -131,11 +146,7 @@
             [button addTarget:weakSelf action:@selector(backAction:) forControlEvents:(UIControlEventTouchUpInside)];
             
         }];
-        
-        
     }
-
-    
 #pragma mark ========== 点击夜间模式button的方法 =====================
     //夜间模式
     if (itemButtonIndex == 3) {
@@ -153,6 +164,12 @@
     if (itemButtonIndex == 2) {
         CameraViewController *cameraVC = [CameraViewController new];
         [self presentViewController:cameraVC animated:YES completion:nil];
+    }
+    
+#pragma mark ============== 生成二维码 ================
+    if (itemButtonIndex == 0) {
+        CreateViewController *createVC = [CreateViewController new];
+        [self presentViewController:createVC animated:YES completion:nil];
     }
 
 }
@@ -213,7 +230,7 @@
     button.titleLabel.font = [UIFont systemFontOfSize:14];
     // 设置按钮普通状态标题颜色
     [button setTitleColor:[UIColor colorWithRed:0.33 green:0.21 blue:0.15 alpha:1.00] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithRed:38.0/255 green:217.0/255 blue:165.0/255 alpha:1] forState:UIControlStateSelected];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
     return button;
 }
 //实现代理的方法

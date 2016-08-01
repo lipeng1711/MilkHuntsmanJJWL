@@ -8,25 +8,27 @@
 
 #import "AppDelegate.h"
 #import <SMS_SDK/SMSSDK.h>
-
 #import "EMSDK.h"
 #import <Wilddog/Wilddog.h>
 #import "WeiboSDK.h"
 #import <UMSocialWechatHandler.h>
 #import <UMSocialQQHandler.h>
 
+
+
 @interface AppDelegate ()<WeiboSDKDelegate>
 @property (nonatomic, strong) Wilddog *ref;
 
-//#import <UMSocialWechatHandler.h>
-//#import <UMSocialQQHandler.h>
+
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+     sleep(2);
+    
     //初始化应用，appKey和appSecret从后台申请得
     self.hasLogined=NO;
     [SMSSDK registerApp:@"1419a01addae0" withSecret:@"56022de00d8ebbc52cda43f5994739f9"];

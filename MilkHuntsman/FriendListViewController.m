@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     UILabel *customLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
     customLab.textAlignment = NSTextAlignmentCenter;
     [customLab setTextColor:[UIColor whiteColor]];

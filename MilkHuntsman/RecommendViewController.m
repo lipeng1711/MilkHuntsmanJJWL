@@ -73,7 +73,7 @@ FirstFiveCellDelegate
     _rootArray = [NSMutableArray array];
     self.dataArray = [NSMutableArray array];
 
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.164 green:0.657 blue:0.915 alpha:1.000]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:200/255.0 green:243/255.0 blue:255/255.0 alpha:1.00]];
     self.recommendTableView.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = YES;
     self.recommendTableView.delegate = self;
@@ -237,6 +237,8 @@ FirstFiveCellDelegate
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"所有城市▶︎" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftAction)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类▶︎" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction)];
     
+    [self.navigationItem.leftBarButtonItem setTintColor:[UIColor blackColor]];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor blackColor]];
     
 #pragma mark ---- 头视图加searchBar和轮播图
     RecommendView *recommendV = [[RecommendView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, 194)];

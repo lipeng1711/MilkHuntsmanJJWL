@@ -68,9 +68,9 @@ UINavigationControllerDelegate
     
     [self.firstIV addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(first:)]];
     [self.firstLabel addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(first:)]];
-    
-    [self.secondIV addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(second:)]];
-    [self.secondLabel addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(second:)]];
+
+    [self.secondIV addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(second:)]];
+    [self.secondLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(second:)]];
     
     [self.thirdIV addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(third:)]];
     [self.thirdLabel addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(third:)]];
@@ -91,16 +91,15 @@ UINavigationControllerDelegate
 }
 
 - (void)second:(UITapGestureRecognizer *)sender{
-    //设置下个界面navigationbar字
+    //跳转到收藏页面
     UIBarButtonItem *set = [UIBarButtonItem new];
     set.title = @"我的收藏";
     self.navigationItem.backBarButtonItem = set;
     self.navigationController.navigationBar.hidden = NO;
-    
     CollectViewController *collectVC = [CollectViewController new];
     [self.navigationController pushViewController:collectVC animated:YES];
-
 }
+
 - (void)third:(UITapGestureRecognizer *)sender{
     //设置下个界面navigationbar字
     UIBarButtonItem *set = [UIBarButtonItem new];
@@ -111,6 +110,7 @@ UINavigationControllerDelegate
     ThirdViewController *third = [story instantiateViewControllerWithIdentifier:@"ThirdViewController"];
     [self.navigationController pushViewController:third animated:YES];
 }
+
 - (void)forth:(UITapGestureRecognizer *)sender{
     //设置下个界面navigationbar字
     UIBarButtonItem *set = [UIBarButtonItem new];
@@ -180,16 +180,6 @@ UINavigationControllerDelegate
 }
 //换背景图跳转
 - (void)action:(UITapGestureRecognizer *)sender{
-    
-//    //设置下个界面navigationbar字,必须初始化
-//    UIBarButtonItem *set = [UIBarButtonItem new];
-//    
-//    set.title = @"账户设置";
-//    
-//    self.navigationItem.backBarButtonItem = set;
-//    
-//    self.navigationController.navigationBar.hidden = NO;
-    
     UIImagePickerController *picker = [UIImagePickerController new];
     picker.delegate = self ;
     //  提示框
@@ -233,15 +223,23 @@ UINavigationControllerDelegate
     }];
     
 }
-
-
 //视图将要显示
 - (void)viewWillAppear:(BOOL)animated{
-//    隐藏
+    //    隐藏
     self.navigationController.navigationBar.hidden = YES;
-//    传头像
     self.HeadImageView.image = [JJZshare shareheadImage].changeImage;
-    
+    AppDelegate * app = [UIApplication sharedApplication].delegate;
+    if (app.hasLogined) {
+        if ([JJZshare shareheadImage].headImage) {
+            NSString *headImage = [JJZshare shareheadImage].headImage;
+            NSData *imageData = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"imageName:%@",headImage]];
+            self.HeadImageView.image = [UIImage imageWithData:imageData];
+            self.nameLabel.text = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"myUserName%@",[JJZshare shareheadImage].headImage]];
+        }
+    }else{
+        self.HeadImageView.image = nil;
+        self.nameLabel.text = @"给自己取个风骚的名字吧!";
+    }
 }
 
 //传值
@@ -289,7 +287,7 @@ UINavigationControllerDelegate
 
 //点击跳转到更多猎人动态画面
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         FamilyViewController *familyVC = [storyboard instantiateViewControllerWithIdentifier:@"FamilyViewController"];
         [self.navigationController pushViewController:familyVC animated:YES];
@@ -321,6 +319,7 @@ UINavigationControllerDelegate
     [self.navigationController pushViewController:setVC animated:YES];
     
 }
+
 //头标题高度,只是为了漂浮效果
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
