@@ -1,7 +1,0 @@
-/Users/zhaoce/Desktop/MilkHuntsmanJJWL/Pods/DCPathButton/DCPathButton/Sounds/bloom.caf
-/Users/zhaoce/Desktop/MilkHuntsmanJJWL/Pods/DCPathButton/DCPathButton/Sounds/fold.caf
-/Users/zhaoce/Desktop/MilkHuntsmanJJWL/Pods/DCPathButton/DCPathButton/Sounds/selected.caf
-/Users/zhaoce/Desktop/MilkHuntsmanJJWL/Pods/MJRefresh/MJRefresh/MJRefresh.bundle
-/Users/zhaoce/Desktop/MilkHuntsmanJJWL/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/UMSocialSDKResourcesNew.bundle
-/Users/zhaoce/Desktop/MilkHuntsmanJJWL/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle
-/Users/zhaoce/Desktop/MilkHuntsmanJJWL/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_Extra_Frameworks/SinaSSO/WeiboSDK.bundle

@@ -22,14 +22,12 @@ static CoreSingleHandle *handle = nil;
     return handle;
 }
 
-//懒加载
-- (NSMutableArray *)dataArray{
-    if (_dataArray == nil) {
-        coreManager *manager = [coreManager new];
-        NSArray *tempArray = [manager selectObjectContext];
-        _dataArray = [NSMutableArray arrayWithArray:tempArray];
-    }
+-(NSArray *)getData{
+    coreManager *manager = [coreManager new];
+    NSArray *tempArray = [manager selectObjectContext];
+    _dataArray = [NSMutableArray arrayWithArray:tempArray];
     return _dataArray;
 }
+
 
 @end
