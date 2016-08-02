@@ -21,15 +21,20 @@
 
 @property (nonatomic, strong) UITableView *collectTableView;
 @property (nonatomic, strong) NSString *modelStr;
-
+@property (strong,nonatomic) NSArray *dataArray;
 @end
 
 @implementation CollectViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+ //把CoreData数据库中的数组赋值给self.dataArray  这里2个数组名字都一样,不要误会.
+    self.dataArray = [[CoreSingleHandle shareCoreSingleHandle] getData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.dataArray = [NSArray new];
     self.collectTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width,self.view.frame.size.height- 110) style:(UITableViewStylePlain)];
     [self.view addSubview:self.collectTableView];
     
@@ -50,15 +55,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    CoreSingleHandle *core = [CoreSingleHandle shareCoreSingleHandle];
-    return core.dataArray.count;
+    
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CollectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CollectTableViewCell_Identify forIndexPath:indexPath];
     
     //单例赋值
-    CoredataModel *model = [CoreSingleHandle shareCoreSingleHandle].dataArray[indexPath.row];
+    CoredataModel *model = self.dataArray[indexPath.row];
     
     [cell.collectImageV setImageWithURL:[NSURL URLWithString:model.cover] placeholderImage:nil];
     

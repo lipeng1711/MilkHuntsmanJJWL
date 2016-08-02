@@ -19,6 +19,36 @@
     return self;
 }
 
+-(void)setModel:(FindModel *)model{
+    if (_model != model) {
+        _model = nil;
+        _model = model;
+    }
+    [_headImageV setImageWithURL:[NSURL URLWithString:model.user[@"avatar_s"]]];
+    _userName.text = model.user[@"username"];
+    _timeLabel.text = model.date_added;
+    if ([model.category isEqualToString:@"share_product"]) {
+        _label.text = @"分享活动";
+    }else if([model.category isEqualToString:@"spot"]){
+       _label.text = @"分享故事";
+    }else{
+        _label.text = @"发布活动";
+    }
+    //给头像添加点击事件手势
+    _headImageV.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+    [_headImageV addGestureRecognizer:tap];
+    [tap addTarget:self action:@selector(clickAction:)];
+}
+
+//代理方法,传递每一个手势点击的id
+- (void)clickAction:(UITapGestureRecognizer *)tap{
+    if (_delegate && [_delegate respondsToSelector:@selector(passTapGesture:view:)]) {
+        [_delegate passTapGesture:tap view:self];
+    }
+}
+
+
 - (void)addAllViews{
     
     self.headImageV = [[UIImageView alloc] initWithFrame:CGRectMake(15, 13, 43, 43)];

@@ -21,8 +21,11 @@
 <
   UITableViewDataSource,
   UITableViewDelegate,
-  passValueCommentBtnDelegate
+  passValueCommentBtnDelegate,
+  passValueDelegate  //设置代理通过点击手势点击一个section传一个id
 >
+
+#warning =====这里原来是直接传值,这样的话有bug,会出来一个section,传一个id,所以每次出来的section都是下一个id
 
 @property (weak, nonatomic) IBOutlet UITableView *findTableView;
 
@@ -56,6 +59,7 @@ static const CGFloat MJDuration = 1.5;
     
     self.findArray = [NSMutableArray array];
     
+    self.findTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self requestFind];
     
@@ -167,40 +171,19 @@ static const CGFloat MJDuration = 1.5;
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 
     FindView *findV = [[FindView alloc] init];
-#pragma mark ========= 给头部视图赋值 ==================
     FindModel * model = self.findArray[section];
-    [findV.headImageV setImageWithURL:[NSURL URLWithString:model.user[@"avatar_s"]]];
-    findV.userName.text = model.user[@"username"];
-    findV.timeLabel.text = model.date_added;
-    if ([model.category isEqualToString:@"share_product"]) {
-        findV.label.text = @"分享活动";
-    }else if([model.category isEqualToString:@"spot"]){
-        findV.label.text = @"分享故事";
-    }else{
-        findV.label.text = @"发布活动";
-    }
-    
-    self.passHomePageID = model.user[@"id"];
-    
-    //给头像添加点击事件手势
-    findV.headImageV.userInteractionEnabled = YES;
-    [findV.headImageV addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headImageAction:)]];
-
-    
+    findV.model = model;
+//遵循代理
+    findV.delegate = self;
     return findV;
 }
 
-//跳转到用户详情界面
-- (void)headImageAction:(UITapGestureRecognizer *)sender{
-    
+//实现代理的方法
+-(void)passTapGesture:(UITapGestureRecognizer *)tap view:(FindView *)findView{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     homePageViewController *homePageVC = [storyboard instantiateViewControllerWithIdentifier:@"homePageViewController"];
-    //给homepage传值
-    // FindModel*model= self.findArray[ [self.findTableView indexPathForSelectedRow].row];
-    
-    //    homePageVC.passValueID = model.user[@"id"];
-    
-    homePageVC.passValueID = self.passHomePageID;
+ //传值(原来这里是在头部视图直接传值,因为上面那个头部视图的方法是出来一个section,传一个id,所以会出现一个bug,每次传递的id都是显示出来的下一个section)
+    homePageVC.passValueID = findView.model.user[@"id"];
     
     [self.navigationController pushViewController:homePageVC animated:YES];
 }

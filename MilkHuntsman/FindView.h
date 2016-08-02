@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FindModel.h"
+@class FindView;
+//通过设置代理,传递每一个手势点击的id,这样没有bug
+@protocol passValueDelegate <NSObject>
 
+- (void)passTapGesture:(UITapGestureRecognizer *)tap view:(FindView *)findView;
+
+@end
 
 @interface FindView : UIView
 //头像
@@ -19,5 +26,8 @@
 //发布时间
 @property (nonatomic, strong) UILabel *timeLabel;
 
+@property (nonatomic, strong) FindModel *model;
+
+@property(weak,nonatomic)id<passValueDelegate> delegate;
 
 @end

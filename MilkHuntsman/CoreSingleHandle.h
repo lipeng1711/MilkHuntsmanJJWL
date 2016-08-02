@@ -15,4 +15,7 @@
 //在这里直接给数组初始化
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
+//在这里初始化数组,使用get方法,如果使用懒加载只走一次,不能实时更新.
+- (NSArray *)getData;
+
 @end
