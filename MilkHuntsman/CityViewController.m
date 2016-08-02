@@ -10,7 +10,7 @@
 #import "LPSegmentedControl.h"
 #import "InternalView.h"
 #import "ExternalView.h"
-
+#import "RecommendViewController.h"
 @interface CityViewController ()<UIScrollViewDelegate,UITableViewDelegate>
 
 @property (nonatomic, strong) UIButton *recommendBackBtn;
@@ -136,9 +136,11 @@
 #pragma mark -- tableView跳转
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     __weak typeof(self) weakSelf = self;
     [self dismissViewControllerAnimated:YES completion:^{
         weakSelf.passString([tableView cellForRowAtIndexPath:indexPath].textLabel.text);
+        
     }];
 }
 
