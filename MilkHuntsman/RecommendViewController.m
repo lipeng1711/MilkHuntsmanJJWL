@@ -452,7 +452,6 @@ SDCycleScrollViewDelegate
 #pragma mark -- 点击scrollView跳转页面
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
-//    NSLog(@"---点击了第%ld张图片", (long)index);
 
     RecommendImageViewController *imageVC = [RecommendImageViewController new];
     imageVC.imageUrl = self.imageArray[index];
