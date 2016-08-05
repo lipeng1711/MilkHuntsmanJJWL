@@ -41,7 +41,7 @@
     self.recommendScrollView.contentSize = CGSizeMake(kWidth * 6 + 6, 0);
     self.recommendScrollView.showsHorizontalScrollIndicator = NO;
     
-    for (int i = 0; i < 6; i ++) {
+    for (int i = 0; i < self.firstTwoArray.count; i ++) {
         self.tempView = [[UIView alloc] initWithFrame:CGRectMake(kWidth * i + 5, 5, kWidth - 5, kHeight)];
         self.tempView.layer.cornerRadius = 10;
         self.tempView.layer.masksToBounds = YES;

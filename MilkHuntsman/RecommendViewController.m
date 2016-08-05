@@ -9,7 +9,6 @@
 #import "RecommendViewController.h"
 
 #import "RecommendTableViewCell.h"
-#import "RecommendView.h"
 #import "CityViewController.h"
 #import "RecommendRequest.h"
 #import "RecommendModel.h"
@@ -29,7 +28,8 @@
 #import "RecommendSearchBarTableViewController.h"
 #import "HYBModalHalfDetailController.h"
 #import "HYBModalTransition.h"
-
+#import "SDCycleScrollView.h"
+#import "LPRecommendView.h"
 @interface RecommendViewController ()
 <
 UITableViewDelegate,
@@ -37,11 +37,11 @@ UITableViewDataSource,
 FirstCellDelegate,
 SecondCellDelegate,
 ThirdCellDelegate,
-ImageViewDelegate,
 FirstTwoCellDelegate,
 FirstThreeCellDelegate,
 FirstFourCellDelegate,
-FirstFiveCellDelegate
+FirstFiveCellDelegate,
+SDCycleScrollViewDelegate
 >
 
 @property (strong, nonatomic) UISearchBar *recommendSearchBar;
@@ -93,6 +93,11 @@ FirstFiveCellDelegate
     [self addAllViews];
     [self requestRecommend];
     [self reloadData];
+    
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} forState:(UIControlStateNormal)];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} forState:(UIControlStateNormal)];
+    
+    
     
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MilkTitle"]];
     
@@ -228,7 +233,6 @@ FirstFiveCellDelegate
         RootViewController *milk = (RootViewController *)self.navigationController.parentViewController;
         [milk showTabBar];
     
-    
 }
 
 - (void)addAllViews
@@ -241,13 +245,13 @@ FirstFiveCellDelegate
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor blackColor]];
     
 #pragma mark ---- 头视图加searchBar和轮播图
-    RecommendView *recommendV = [[RecommendView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, 194)];
-    recommendV.backgroundColor = [UIColor whiteColor];
-    self.recommendTableView.tableHeaderView = recommendV;
-    [recommendV.searchBtn addTarget:self action:@selector(searchButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [recommendV.addressBtn addTarget:self action:@selector(addressButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    recommendV.imageViewDelegate = self;
     
+    LPRecommendView *lpView = [[LPRecommendView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, 194)];
+    self.recommendTableView.tableHeaderView = lpView;
+    [lpView.searchBtn addTarget:self action:@selector(searchButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [lpView.addressBtn addTarget:self action:@selector(addressButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    lpView.cycleScrollView2.delegate = self;
+   
 }
 #pragma mark -- searchBtn的点击方法
 - (void)searchButtonAction:(UIButton *)button
@@ -276,13 +280,17 @@ FirstFiveCellDelegate
 //-------------------跳转页面传值（城市名）----------------------
     __weak typeof(self) weakSelf = self;
     cityVC.passString = ^(NSString *string){
-        NSString *str = [NSString stringWithFormat:@"%@▶︎",string];
+        NSString *str = [NSString stringWithFormat:@"%@",string];
       weakSelf.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:str style:(UIBarButtonItemStylePlain) target:self action:@selector(leftAction)];
     };
 }
 #pragma mark -- 点击 分类 触发的方法
 - (void)rightAction
 {
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类▼" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction)];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} forState:(UIControlStateNormal)];
+    
     [self onPresent];
 }
 
@@ -298,6 +306,10 @@ FirstFiveCellDelegate
         
     } dismissed:^(UIViewController *dismissed, HYBBaseTransition *transition) {
         // do nothing
+        
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类▶︎" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction)];
+        [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} forState:(UIControlStateNormal)];
+
         transition.transitionMode = kHYBTransitionDismiss;
     }];
     
@@ -438,11 +450,14 @@ FirstFiveCellDelegate
     
  }
 #pragma mark -- 点击scrollView跳转页面
-- (void)changePageByIndext:(NSInteger)indext
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
+//    NSLog(@"---点击了第%ld张图片", (long)index);
+
     RecommendImageViewController *imageVC = [RecommendImageViewController new];
-    imageVC.imageUrl = self.imageArray[indext];
+    imageVC.imageUrl = self.imageArray[index];
     [self.navigationController pushViewController:imageVC animated:YES];
+
 }
 
 - (void)firstChangePageByIndext:(NSInteger)indext

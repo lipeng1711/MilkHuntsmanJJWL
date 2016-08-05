@@ -87,12 +87,12 @@
     _btn4.layer.masksToBounds = YES;
     _btn5.layer.masksToBounds = YES;
     _btn6.layer.masksToBounds = YES;
-    _btn1.frame = CGRectMake(50, 120, 80, 50);
-    _btn2.frame = CGRectMake(180, 120, 80, 50);
-    _btn3.frame = CGRectMake(300, 120, 80, 50);
-    _btn4.frame = CGRectMake(50, 220, 80, 50);
-    _btn5.frame = CGRectMake(180, 220, 80, 50);
-    _btn6.frame = CGRectMake(300, 220, 80, 50);
+    _btn1.frame = CGRectMake(WindownWidth * 0.121, WindownWidth * 0.29, 80, 50);
+    _btn2.frame = CGRectMake(WindownWidth * 0.435, WindownWidth * 0.29, 80, 50);
+    _btn3.frame = CGRectMake(WindownWidth * 0.725, WindownWidth * 0.29, 80, 50);
+    _btn4.frame = CGRectMake(WindownWidth * 0.121, WindownWidth * 0.5315, 80, 50);
+    _btn5.frame = CGRectMake(WindownWidth * 0.435, WindownWidth * 0.5315, 80, 50);
+    _btn6.frame = CGRectMake(WindownWidth * 0.725, WindownWidth * 0.5315, 80, 50);
     [_btn1 sizeToFit];
     [_btn2 sizeToFit];
     [_btn3 sizeToFit];

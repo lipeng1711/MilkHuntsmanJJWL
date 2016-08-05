@@ -306,7 +306,6 @@
 		DD78CEB21D4B36F6000179E3 /* RecommendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CEB11D4B36F6000179E3 /* RecommendRequest.m */; };
 		DD78CEB51D4B3708000179E3 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CEB41D4B3708000179E3 /* RecommendModel.m */; };
 		DD78CEB91D4B371D000179E3 /* RecommendSearchBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CEB81D4B371D000179E3 /* RecommendSearchBarModel.m */; };
-		DD78CEBE1D4B3769000179E3 /* RecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CEBD1D4B3769000179E3 /* RecommendView.m */; };
 		DD78CEC21D4B377A000179E3 /* FifthTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CEC01D4B377A000179E3 /* FifthTableViewCell.m */; };
 		DD78CEC81D4B379A000179E3 /* RecommendSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CEC61D4B379A000179E3 /* RecommendSearchTableViewCell.m */; };
 		DD78CEC91D4B379A000179E3 /* RecommendSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD78CEC71D4B379A000179E3 /* RecommendSearchTableViewCell.xib */; };
@@ -335,6 +334,14 @@
 		DD78CF161D4B38F6000179E3 /* RecommendSearchBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CF151D4B38F6000179E3 /* RecommendSearchBarTableViewController.m */; };
 		DD78CF1B1D4B3909000179E3 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CF181D4B3909000179E3 /* MapViewController.m */; };
 		DD78CF1C1D4B3909000179E3 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD78CF1A1D4B3909000179E3 /* Annotation.m */; };
+		DDC0D0151D51CB0B00750E6E /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D0081D51CB0B00750E6E /* SDCollectionViewCell.m */; };
+		DDC0D0161D51CB0B00750E6E /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D00A1D51CB0B00750E6E /* SDCycleScrollView.m */; };
+		DDC0D0171D51CB0B00750E6E /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D00C1D51CB0B00750E6E /* UIView+SDExtension.m */; };
+		DDC0D0181D51CB0B00750E6E /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D00E1D51CB0B00750E6E /* TAAbstractDotView.m */; };
+		DDC0D0191D51CB0B00750E6E /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D0101D51CB0B00750E6E /* TAAnimatedDotView.m */; };
+		DDC0D01A1D51CB0B00750E6E /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D0121D51CB0B00750E6E /* TADotView.m */; };
+		DDC0D01B1D51CB0B00750E6E /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D0141D51CB0B00750E6E /* TAPageControl.m */; };
+		DDC0D01E1D51CC8900750E6E /* LPRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0D01D1D51CC8900750E6E /* LPRecommendView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -769,8 +776,6 @@
 		DD78CEB41D4B3708000179E3 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
 		DD78CEB71D4B371D000179E3 /* RecommendSearchBarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendSearchBarModel.h; sourceTree = "<group>"; };
 		DD78CEB81D4B371D000179E3 /* RecommendSearchBarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendSearchBarModel.m; sourceTree = "<group>"; };
-		DD78CEBC1D4B3769000179E3 /* RecommendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendView.h; sourceTree = "<group>"; };
-		DD78CEBD1D4B3769000179E3 /* RecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendView.m; sourceTree = "<group>"; };
 		DD78CEBF1D4B377A000179E3 /* FifthTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthTableViewCell.h; sourceTree = "<group>"; };
 		DD78CEC01D4B377A000179E3 /* FifthTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthTableViewCell.m; sourceTree = "<group>"; };
 		DD78CEC51D4B379A000179E3 /* RecommendSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendSearchTableViewCell.h; sourceTree = "<group>"; };
@@ -826,6 +831,22 @@
 		DD78CF181D4B3909000179E3 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		DD78CF191D4B3909000179E3 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		DD78CF1A1D4B3909000179E3 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
+		DDC0D0071D51CB0B00750E6E /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		DDC0D0081D51CB0B00750E6E /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		DDC0D0091D51CB0B00750E6E /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		DDC0D00A1D51CB0B00750E6E /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		DDC0D00B1D51CB0B00750E6E /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		DDC0D00C1D51CB0B00750E6E /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		DDC0D00D1D51CB0B00750E6E /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		DDC0D00E1D51CB0B00750E6E /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		DDC0D00F1D51CB0B00750E6E /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		DDC0D0101D51CB0B00750E6E /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		DDC0D0111D51CB0B00750E6E /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		DDC0D0121D51CB0B00750E6E /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		DDC0D0131D51CB0B00750E6E /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		DDC0D0141D51CB0B00750E6E /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		DDC0D01C1D51CC8900750E6E /* LPRecommendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPRecommendView.h; sourceTree = "<group>"; };
+		DDC0D01D1D51CC8900750E6E /* LPRecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPRecommendView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1971,8 +1992,9 @@
 		DD78CEBB1D4B373E000179E3 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				DD78CEBC1D4B3769000179E3 /* RecommendView.h */,
-				DD78CEBD1D4B3769000179E3 /* RecommendView.m */,
+				DDC0D0061D51CAEC00750E6E /* other */,
+				DDC0D01C1D51CC8900750E6E /* LPRecommendView.h */,
+				DDC0D01D1D51CC8900750E6E /* LPRecommendView.m */,
 			);
 			name = HeaderView;
 			sourceTree = "<group>";
@@ -2070,6 +2092,27 @@
 				DD78CF0A1D4B38D3000179E3 /* HYBModalTransition.m */,
 			);
 			name = WriteController;
+			sourceTree = "<group>";
+		};
+		DDC0D0061D51CAEC00750E6E /* other */ = {
+			isa = PBXGroup;
+			children = (
+				DDC0D0071D51CB0B00750E6E /* SDCollectionViewCell.h */,
+				DDC0D0081D51CB0B00750E6E /* SDCollectionViewCell.m */,
+				DDC0D0091D51CB0B00750E6E /* SDCycleScrollView.h */,
+				DDC0D00A1D51CB0B00750E6E /* SDCycleScrollView.m */,
+				DDC0D00B1D51CB0B00750E6E /* UIView+SDExtension.h */,
+				DDC0D00C1D51CB0B00750E6E /* UIView+SDExtension.m */,
+				DDC0D00D1D51CB0B00750E6E /* TAAbstractDotView.h */,
+				DDC0D00E1D51CB0B00750E6E /* TAAbstractDotView.m */,
+				DDC0D00F1D51CB0B00750E6E /* TAAnimatedDotView.h */,
+				DDC0D0101D51CB0B00750E6E /* TAAnimatedDotView.m */,
+				DDC0D0111D51CB0B00750E6E /* TADotView.h */,
+				DDC0D0121D51CB0B00750E6E /* TADotView.m */,
+				DDC0D0131D51CB0B00750E6E /* TAPageControl.h */,
+				DDC0D0141D51CB0B00750E6E /* TAPageControl.m */,
+			);
+			name = other;
 			sourceTree = "<group>";
 		};
 		FEB6CED462E767E68F811731 /* Frameworks */ = {
@@ -2376,7 +2419,6 @@
 				C2E85E451D4CC9BC00EF8C5F /* ScanViewController.m in Sources */,
 				C256DD061D3F0BC1000B4FB4 /* MessageTableViewCell.m in Sources */,
 				D6582C021D4755F9005D3465 /* SDImageCache.m in Sources */,
-				DD78CEBE1D4B3769000179E3 /* RecommendView.m in Sources */,
 				C2B15D521D4AFECB00F501A5 /* FamilyViewController.m in Sources */,
 				C256DD291D3F1253000B4FB4 /* CommentViewController.m in Sources */,
 				C256DC721D3F0B66000B4FB4 /* ChatChatViewController.m in Sources */,
@@ -2419,12 +2461,14 @@
 				C256DD571D3F2710000B4FB4 /* LPSegmentedControl.m in Sources */,
 				C2A5FB0F1D365BA800F269B0 /* RootViewController.m in Sources */,
 				DD78CEAF1D4B36EA000179E3 /* RecommendOtherRequest.m in Sources */,
+				DDC0D0151D51CB0B00750E6E /* SDCollectionViewCell.m in Sources */,
 				D6582B8A1D475264005D3465 /* SetTableViewCell.m in Sources */,
 				DD78CF0C1D4B38D3000179E3 /* HYBBaseViewController.m in Sources */,
 				DD78CEB91D4B371D000179E3 /* RecommendSearchBarModel.m in Sources */,
 				C256DCFD1D3F0BAE000B4FB4 /* UIButton+JSMessagesView.m in Sources */,
 				D6582B741D475264005D3465 /* UsePhoneNumViewController.m in Sources */,
 				D6582B861D475264005D3465 /* AccountTableViewCell.m in Sources */,
+				DDC0D01E1D51CC8900750E6E /* LPRecommendView.m in Sources */,
 				C256DD2E1D3F1253000B4FB4 /* FindView.m in Sources */,
 				C2B15DA41D4B1A3200F501A5 /* CoredataModel.m in Sources */,
 				DD78CEE41D4B37DD000179E3 /* RecommendSecondTableViewCell.m in Sources */,
@@ -2438,6 +2482,7 @@
 				DD78CEE11D4B37CA000179E3 /* RecommendTableViewCell.m in Sources */,
 				DD78CEFD1D4B38B2000179E3 /* HYBModalHalfDetailController.m in Sources */,
 				D6582B851D475264005D3465 /* AccountModel.m in Sources */,
+				DDC0D0161D51CB0B00750E6E /* SDCycleScrollView.m in Sources */,
 				D6582B881D475264005D3465 /* SetViewController.m in Sources */,
 				C2B15D4A1D4AFE9900F501A5 /* ShowImageView.m in Sources */,
 				C256DCCE1D3F0BAE000B4FB4 /* NSString+JSMessagesView.m in Sources */,
@@ -2481,12 +2526,14 @@
 				D6582C071D4755F9005D3465 /* SDWebImageManager.m in Sources */,
 				C2E85E3C1D4CABA100EF8C5F /* CreateViewController.m in Sources */,
 				C2B15D9E1D4B19C500F501A5 /* MilkHuntsman.xcdatamodeld in Sources */,
+				DDC0D0181D51CB0B00750E6E /* TAAbstractDotView.m in Sources */,
 				C2A5FAE81D36594200F269B0 /* AppDelegate.m in Sources */,
 				C2B15D2F1D4AFB0600F501A5 /* CollectViewController.m in Sources */,
 				D6582C0A1D4755F9005D3465 /* UIImage+GIF.m in Sources */,
 				D6582C0E1D4755F9005D3465 /* UIImageView+WebCache.m in Sources */,
 				C256DD241D3F1253000B4FB4 /* CommentModel.m in Sources */,
 				DD78CEF41D4B3873000179E3 /* RecommendSearchViewController.m in Sources */,
+				DDC0D01A1D51CB0B00750E6E /* TADotView.m in Sources */,
 				C2A5FB071D365ACF00F269B0 /* NetWorkRequest.m in Sources */,
 				C2B15D3A1D4AFE5200F501A5 /* UIImage+ReSize.m in Sources */,
 				C2B15D541D4AFECB00F501A5 /* ShowImageViewController.m in Sources */,
@@ -2501,6 +2548,7 @@
 				C256DCFF1D3F0BAE000B4FB4 /* UIImage+JSMessagesView.m in Sources */,
 				C2B15D481D4AFE9900F501A5 /* FamilyGroupCell.m in Sources */,
 				D6582C041D4755F9005D3465 /* SDWebImageDecoder.m in Sources */,
+				DDC0D01B1D51CB0B00750E6E /* TAPageControl.m in Sources */,
 				C2B15D3B1D4AFE5200F501A5 /* UITableView+Improve.m in Sources */,
 				C256DD2A1D3F1253000B4FB4 /* FindModel.m in Sources */,
 				DD78CED11D4B37B2000179E3 /* CityModel.m in Sources */,
@@ -2517,9 +2565,11 @@
 				D6582B7D1D475264005D3465 /* FriendListViewController.m in Sources */,
 				DD78CF1B1D4B3909000179E3 /* MapViewController.m in Sources */,
 				C2B15DA31D4B1A3200F501A5 /* CoredataModel+CoreDataProperties.m in Sources */,
+				DDC0D0171D51CB0B00750E6E /* UIView+SDExtension.m in Sources */,
 				D6582B891D475264005D3465 /* SetModel.m in Sources */,
 				C2B15D1F1D4AF89200F501A5 /* HomePageModel.m in Sources */,
 				D6582B921D475264005D3465 /* AsAHuntViewController.m in Sources */,
+				DDC0D0191D51CB0B00750E6E /* TAAnimatedDotView.m in Sources */,
 				D6E5C72F1D4C38190090D2F5 /* ImageFromTableViewCell.m in Sources */,
 				C256DC7B1D3F0B9F000B4FB4 /* MessageChatTableViewCell.m in Sources */,
 				DD78CF0D1D4B38D3000179E3 /* HYBBaseTransition.m in Sources */,
