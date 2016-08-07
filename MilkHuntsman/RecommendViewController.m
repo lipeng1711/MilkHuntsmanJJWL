@@ -97,7 +97,7 @@ SDCycleScrollViewDelegate
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} forState:(UIControlStateNormal)];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]} forState:(UIControlStateNormal)];
     
-    
+    self.recommendTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MilkTitle"]];
     

@@ -64,6 +64,7 @@
     self.litileView.layer.cornerRadius = self.litileView.bounds.size.width/ 2;
     self.litileView.layer.masksToBounds = YES;
     
+    
 }
 //--------------------赋值--------------------
 - (void)setRecommendmodel:(RecommendModel *)recommendmodel
